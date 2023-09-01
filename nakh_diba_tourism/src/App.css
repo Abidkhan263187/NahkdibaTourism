@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -7,6 +8,22 @@
   pointer-events: none;
 }
 
+
+
+/* home page start  */
+/* #home_setcion_one{
+  border: 1px solid;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  font-family: sans-serif; 
+background-image: url('https://thumbs.dreamstime.com/b/world-landmarks-photo-collage-isolated-white-background-travel-tourism-study-around-world-concept-94753893.jpg');
+} */
+/* home page end  */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
