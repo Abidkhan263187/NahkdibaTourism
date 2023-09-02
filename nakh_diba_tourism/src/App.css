@@ -5,9 +5,15 @@
 
 .App-logo {
   height: 40vmin;
+ 
   pointer-events: none;
 }
 
+#nav_li:hover{
+ color: rgb(235, 235, 235);
+ text-decoration: none;
+ 
+}
 
 
 /* home page start  */

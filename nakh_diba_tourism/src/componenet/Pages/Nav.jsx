@@ -5,11 +5,13 @@ import { Box, Flex, Spacer, Link, Heading, Button, useDisclosure } from '@chakra
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box bg="teal" p={4}>
+    <Box bg="transparent" variant={'outline'} p={4}
+  
+    >
       <Flex alignItems="center"
      
       >
-        <Heading size="md" color="white">
+        <Heading size="lg" color="black"  fontWeight={'700'}>
           Logo
         </Heading>
 
@@ -32,16 +34,16 @@ import { Box, Flex, Spacer, Link, Heading, Button, useDisclosure } from '@chakra
         
           width={"40%"}
         display={{ base: 'none', md: 'flex' }}>
-          <Link color="white" ml={4} href="#">
+          <Link id='nav_li' color="black" fontSize={'large'} fontWeight={'700'} ml={4} href="#">
             Home
           </Link>
-          <Link color="white" ml={4} href="#">
+          <Link  id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
             News
           </Link>
-          <Link color="white" ml={4} href="#">
+          <Link id='nav_li' color="black" fontSize={'large'} fontWeight={'700'} ml={4} href="#">
             About
           </Link>
-          <Link color="white" ml={4} href="#">
+          <Link id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
             Contact
           </Link>
         </Flex>
