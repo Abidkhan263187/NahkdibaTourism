@@ -21,6 +21,8 @@ import { SectionOne } from './SectionOne';
 import { SectionTwo_home } from './HomeSections/SectionTwo_home';
 import { SectionThree } from './HomeSections/SectionThree';
 import { SectionFour } from './HomeSections/SectionFour';
+import { SectionFive } from './HomeSections/SectionFive';
+import { Footer } from './Footer';
 
 export const Home = () => {
   const [destination, setDestination] = useState('');
@@ -135,8 +137,14 @@ export const Home = () => {
         <SectionThree />
       </Box>
       <Box>
-        <SectionFour/>
+        <SectionFour />
       </Box>
+      <Box>
+        <SectionFive/>
+      </Box>
+      <footer>
+        <Footer/>
+      </footer>
 
     </>
   );

@@ -4,7 +4,7 @@ import React from 'react';
 export const SectionFour = () => {
     return (
         <Box id="sectionFour_container">
-            <Heading>Popular Destination</Heading>
+            <Heading>Popular <span style={{color:"orange"}}>Destination</span></Heading>
             <Box padding={"40px"}>
                 <Grid
                     id="sectionFour_grid"
@@ -15,12 +15,12 @@ export const SectionFour = () => {
                 >
                     <GridItem rowSpan={2} className='custom-grid-item'>
                         <div className="grid-item-content">
-                            <img src="https://images.pexels.com/photos/2383832/pexels-photo-2383832.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Image 1" />
+                            <img src="https://cdn.britannica.com/09/189809-050-FAC505B0/Jama-Masjid-Delhi.jpg" alt="Image 1" />
                             <div style={{ backgroundColor: "white", color: "orange", position: 'absolute', top: 4, left: 4, padding: '2px 6px', zIndex: 1000, borderRadius: "5px" }}>
                                 <Text fontWeight={'600'} fontSize={'sm'}>20% off</Text>
                             </div>
                             <div style={{ backgroundColor: "white", color: "orange", position: 'absolute', bottom: 4, right: 4, padding: '2px 6px', zIndex: 1000, borderRadius: "5px" }}>
-                                <Text fontWeight={'600'} fontSize={'sm'}>Lahore</Text>
+                                <Text fontWeight={'600'} fontSize={'sm'}>New Delhi</Text>
                             </div>
                         </div>
 

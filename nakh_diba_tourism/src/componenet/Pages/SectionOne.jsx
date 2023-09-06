@@ -24,7 +24,7 @@ const responsive = {
 export const SectionOne = () => {
     return (
         <Flex flexDirection={'column'} gap={5} pl={['10px',"50px"]} pr={['10px','50px']} border={"1px solid"}>
-            <Heading size={'lg'}>BEST HOTELS</Heading>
+            <Heading > Best  <span style={{color:"orange"}}>Hotels</span></Heading>
                 <Carousel responsive={responsive} >
                     <ContinentCard />
                     <ContinentCard />

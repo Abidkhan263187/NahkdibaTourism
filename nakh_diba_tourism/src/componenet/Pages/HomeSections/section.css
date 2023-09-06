@@ -1,9 +1,14 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
 #section_two_container{
  
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-    padding: 30px;
+    gap: 30px;
+    padding: 30px 100px;
     margin-top: 10px;
 }
 #service_card{
@@ -66,10 +71,11 @@ background-color: rgb(3, 178, 184);
 .custom-grid-item {
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .grid-item-content {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: 100%;
 }
@@ -78,9 +84,39 @@ background-color: rgb(3, 178, 184);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s; /* Add a smooth transition effect */
+    transition: transform 0.5s; /* Add a smooth transition effect */
 }
 
 .custom-grid-item:hover .grid-item-content img {
     transform: scale(1.1); /* Adjust the scale factor for zoom level */
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+#section_five{
+    border: 1px solid;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+#about_box{
+    display: flex;
+    border: 1px solid;
+}
+#about_left{
+
+    width: 40%;
+    padding: 25px;
+   
+}
+
+#about_right{
+   width: 60%;
+    text-align: start;
+    padding: 20px;
+}
+#section_five span{
+   
+   color: orange;
 }
