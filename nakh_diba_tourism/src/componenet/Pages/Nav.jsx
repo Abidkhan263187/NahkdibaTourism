@@ -11,8 +11,8 @@ import { Box, Flex, Spacer, Link, Heading, Button, useDisclosure } from '@chakra
       <Flex alignItems="center"
      
       >
-        <Heading size="lg" color="black"  fontWeight={'700'}>
-          Logo
+        <Heading size="md" color="black"  fontWeight={'700'}>
+        <i class="fa-solid fa-torii-gate fa-xl" style={{color: "blue"}}></i>  Nahkdiba.Tourism
         </Heading>
 
         {/* Mobile Menu Button */}
@@ -34,14 +34,20 @@ import { Box, Flex, Spacer, Link, Heading, Button, useDisclosure } from '@chakra
         
           width={"40%"}
         display={{ base: 'none', md: 'flex' }}>
-          <Link id='nav_li' color="black" fontSize={'large'} fontWeight={'700'} ml={4} href="#">
+          <Link id='nav_li' color="black" fontSize={'large'} fontWeight={'700'} ml={4} href="/">
             Home
+          </Link>
+           <Link id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
+            Packages
           </Link>
           <Link  id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
             News
           </Link>
           <Link id='nav_li' color="black" fontSize={'large'} fontWeight={'700'} ml={4} href="#">
             About
+          </Link>
+          <Link id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
+            Book
           </Link>
           <Link id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
             Contact

@@ -11,6 +11,7 @@ import {
   NumberDecrementStepper,
   Text,
   Center,
+  Button,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import DatePicker from 'react-datepicker';
@@ -24,11 +25,15 @@ import { SectionFour } from './HomeSections/SectionFour';
 import { SectionFive } from './HomeSections/SectionFive';
 import { Footer } from './Footer';
 
+import {useNavigate} from 'react-router-dom' 
+
 export const Home = () => {
-  const [destination, setDestination] = useState('');
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-  const [adults, setAdults] = useState(1);
+
+  const navigate=useNavigate()
+  // const [destination, setDestination] = useState('');
+  // const [startDate, setStartDate] = useState(null);
+  // const [endDate, setEndDate] = useState(null);
+  // const [adults, setAdults] = useState(1);
 
   const handleSearch = () => {
     // Implement your search logic here
@@ -63,67 +68,12 @@ export const Home = () => {
           borderRadius={'10px'}
           zIndex={1}
           position="relative"
+          // border={"1px solid"}
         >
           <Text fontSize={['2xl', '3xl', '4xl']} color="gray.100" mb={4}>
             Explore the World!
           </Text>
-          <Flex
-
-            bg="rgba(255, 255, 255, 0.9)"
-            borderRadius={'10px'}
-            p={['10px', '15px']}
-            flexWrap="wrap"
-            alignItems={['center', 'flex-start', 'center']}
-            justifyContent={['center', 'space-around']}
-          >
-            <Input
-              placeholder="Enter Your Continent"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
-              p={['10px', '12px']}
-              size="md"
-              mb={[2, 0]}
-              w={['100%', 'auto']} />
-            <DatePicker
-              placeholderText="     Select start date"
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              dateFormat="yyyy-MM-dd"
-              className="date-picker"
-              mb={10}
-              w={['100%', 'auto']}
-              borderRadius={'10px'} />
-            <DatePicker
-              placeholderText="     Select end date"
-              selected={endDate}
-              onChange={(date) => setEndDate(date)}
-              dateFormat="yyyy-MM-dd"
-              className="date-picker"
-              mb={10}
-              w={['100%', 'auto']}
-              borderRadius={'10px'} />
-            <NumberInput
-              value={adults}
-              onChange={(valueString) => setAdults(parseInt(valueString))}
-              min={1}
-              max={10}
-              size="md"
-              mb={[2, 0]}
-              w={['30%', 'auto', '10%']}
-            >
-              <NumberInputField />
-              <NumberInputStepper>
-                <NumberIncrementStepper />
-                <NumberDecrementStepper />
-              </NumberInputStepper>
-            </NumberInput>
-            <IconButton
-              colorScheme="blue"
-              aria-label="Search"
-              icon={<SearchIcon />}
-              onClick={handleSearch}
-              size="lg" />
-          </Flex>
+          <Button colorScheme='orange' onClick={()=>navigate('/continent')}>Plan Trip!</Button>
         </Box>
       </Center>
     </Box>
@@ -140,10 +90,10 @@ export const Home = () => {
         <SectionFour />
       </Box>
       <Box>
-        <SectionFive/>
+        <SectionFive />
       </Box>
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
 
     </>
