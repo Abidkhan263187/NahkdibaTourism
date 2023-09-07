@@ -62,7 +62,13 @@ import { Box, Flex, Spacer, Link, Heading, Button, useDisclosure } from '@chakra
             Home
           </Link>
           <Link color="white" ml={4} href="#">
+            packages
+          </Link>
+            <Link color="white" ml={4} href="#">
             News
+          </Link>
+          <Link color="white" ml={4} href="#">
+            Book
           </Link>
           <Link color="white" ml={4} href="#">
             About
