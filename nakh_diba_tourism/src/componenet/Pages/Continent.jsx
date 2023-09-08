@@ -3,8 +3,13 @@ import { Box, Button, Heading, Image, Link, Text } from '@chakra-ui/react'
 import './style.css';
 import { Nav } from './Nav'
 import { Footer } from './Footer'
+import {useNavigate} from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import { continentInfo } from '../Redux/action';
 
 export const Continent = () => {
+  const dispatch = useDispatch()
+  const navigate=useNavigate()
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
@@ -95,6 +100,12 @@ export const Continent = () => {
     };
   }, [currentSlide]);
 
+  const handleContinent=(continent)=>{
+
+    dispatch(continentInfo(continent));
+    navigate('/country')
+  }
+
   return (
     <Box>
       <Nav />
@@ -127,7 +138,7 @@ export const Continent = () => {
                 <div className="content">
                   <Heading id="continent_name">{continent.name}</Heading>
                   <p>{continent.description}</p>
-                  <Button colorScheme='blue' as={Link} to="#">Explore Continent</Button>
+                  <Button colorScheme='blue'  onClick={()=>handleContinent(continent.name)}>Explore Continent</Button>
                 </div>
               </div>
             </div>

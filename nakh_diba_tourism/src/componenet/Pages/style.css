@@ -289,3 +289,15 @@ padding: 0px 10px;
 text-align: start;
 }
 /* news &events end  */
+
+/* country Start  */
+
+#country_main{
+  padding: 20px;
+}
+#country_Container{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
