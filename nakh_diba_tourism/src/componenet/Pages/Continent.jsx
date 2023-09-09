@@ -4,8 +4,6 @@ import './style.css';
 import { Nav } from './Nav'
 import { Footer } from './Footer'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { useSearchParams } from 'react-router-dom';
 import { ReviewCard, responsive } from './Country';
 import Carousel from 'react-multi-carousel';
 
@@ -21,7 +19,6 @@ export const Continent = () => {
     "https://images2.alphacoders.com/528/528327.jpg",
     "https://images7.alphacoders.com/110/thumb-1920-1108495.png"
   ];
-
   const continents = [
     {
       name: "Asia",
@@ -44,8 +41,7 @@ export const Continent = () => {
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     }
   ];
-
-  const Events_News = [
+   const Events_News = [
     {
       image: "https://www.planetware.com/wpimages/2019/09/india-amritsar-top-attractions-golden-temple.jpg",
       info: "Golden Temple 1977",
@@ -86,23 +82,15 @@ export const Continent = () => {
 
 
 
-  const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
-  };
+  const prevSlide = () => { setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1)); };
+  const nextSlide = () => { setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1)); };
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 2000);
-    return () => {
-      clearInterval(interval);
-    };
+    return () => { clearInterval(interval); };
   }, [currentSlide]);
 
   const handleContinent = (continent) => {
-    // dispatch(continentInfo(continent));
     navigate(`/continent/${continent}`)
   }
 
@@ -111,17 +99,10 @@ export const Continent = () => {
       <Nav />
       <div className="carousel-container">
         <div className="carousel">
-
-          <div className='carousel-item'>
-            <img src={images[currentSlide]} alt={`Image`} />
-          </div>
+          <div className='carousel-item'> <img src={images[currentSlide]} alt={`Image`} /></div>
         </div>
-        <button colorScheme='blue' className="carousel-button prev" onClick={prevSlide}>
-          &#10094;
-        </button>
-        <button colorScheme='blue' className="carousel-button next" onClick={nextSlide}>
-          &#10095;
-        </button>
+        <button colorScheme='blue' className="carousel-button prev" onClick={prevSlide}> &#10094;</button>
+        <button colorScheme='blue' className="carousel-button next" onClick={nextSlide}> &#10095; </button>
       </div>
       <Box id="continent_card_container" m={'40px'}>
         <Heading> Select <span style={{ color: "orange" }}>Continents</span> </Heading>
@@ -180,10 +161,10 @@ export const Continent = () => {
       </Box>
 
       <Box id="book_container_main">
-        <Heading>Book <span style={{color:"orange"}}>Now !</span></Heading>
+        <Heading>Book <span style={{ color: "orange" }}>Now !</span></Heading>
         <Box id="book_container">
           <Box id="book_container_left">
-            <Image src="https://img.freepik.com/premium-photo/vector-tourist-couples-with-travel-bags-illustration_575980-4178.jpg?w=2000" />
+            <Image src="https://img.freepik.com/premium-photo/travel-tourism-suitcase-landmarks_744409-16.jpg" />
           </Box>
           <Box id='book_container_right'>
             <Heading size="lg">Discover your next adventure! Book your dream trip today.</Heading>
@@ -191,7 +172,7 @@ export const Continent = () => {
               Ignite your wanderlust and seize the world!
               Secure your epic journey, and experience the majesty of our planet like never before
             </Text>
-            <Button  as={Link} to="/book">Book</Button>
+            <Button as={Link} to="/book">Book</Button>
           </Box>
         </Box>
       </Box>

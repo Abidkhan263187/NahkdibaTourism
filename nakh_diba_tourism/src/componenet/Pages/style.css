@@ -433,6 +433,7 @@ margin: 20px auto;
   margin-left: 20px;
   margin-bottom: 25px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
 }
 #review_card_left>img{
   margin: auto;

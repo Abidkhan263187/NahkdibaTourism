@@ -52,7 +52,7 @@ export const ReviewCard = () => {
             .map((_, i) => (
               <StarIcon
                 key={i}
-                color={i < 5 ? 'teal.500' : 'gray.300'}
+                color={i < 4 ? 'orange' : 'gray.300'}
               />
             ))}
         </Text>
