@@ -300,6 +300,27 @@ text-align: start;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 20px;
+  padding: 5px 20px;
+}
+#country_card_parent{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+border-radius: 10px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.country_img{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+#country_card_parent>div:hover .country_img{
+  transform: scale(1.2);
 }
 
 
@@ -330,7 +351,9 @@ text-align: start;
   object-fit: cover;
   transition: transform 0.5s ease-in-out;
 }
-
+.card_container:hover .card-image {
+  transform: scale(1.1);
+}
 
 .card-title {
   color: #fff;
@@ -345,9 +368,7 @@ text-align: start;
   margin-top: 0;
 }
 
-.card_container:hover .card-image {
-  transform: scale(1.1);
-}
+
 
 .card-overlay {
   position: absolute;
@@ -425,4 +446,40 @@ margin: 20px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+/* book part start  */
+#book_container_main{
+  border: 2px solid green;
+  margin: 20px 0px;
+  padding: 20px 40px;
+
+}
+#book_container{
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  height: 60vh;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+#book_container>div{
+  width: 50%;
+  /* height: 50vh; */
+  /* border: 1px solid blue; */
+}
+#book_container_left>img{
+  width: 70%;
+  height: 100%;
+  object-fit: contain;
+}
+#book_container_right{
+margin:  auto;
+height: 70%;
+display: grid;
+place-items: center;
+padding: 10px 40px;
+}
+#book_container_right>a{
+width: 50%;
+background-color: orange;
 }

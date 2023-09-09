@@ -1,39 +1,38 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { useSelector, } from 'react-redux'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import { Box, Button, Heading, Image, Text } from '@chakra-ui/react'
-import { countryInfo } from '../Redux/action'
 import './style.css'
 import { Nav } from './Nav'
 import { StarIcon } from '@chakra-ui/icons'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Footer } from './Footer'
 
-const responsive = {
+export const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
-    slidesToSlide: 2 
+    slidesToSlide: 2
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    slidesToSlide: 1 
-    
+    slidesToSlide: 1
+
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 2,
-    slidesToSlide: 1 
+    slidesToSlide: 1
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-    slidesToSlide: 1 
+    slidesToSlide: 1
   }
 };
 export const ReviewCard = () => {
@@ -65,8 +64,6 @@ export const ReviewCard = () => {
 export const Country = () => {
   const [imgArr, setImgArr] = useState([])
   const [galArr, setGalArr] = useState([])
-  const [searchParams, setSearchParams] = useSearchParams()
-  const dispatch = useDispatch()
   const navigate = useNavigate()
   const [currentSlide, setCurrentSlide] = useState(0);
   const [countryArr, setCountryArr] = useState([])
@@ -107,25 +104,25 @@ export const Country = () => {
   return (
     <div>
       <Nav />
-      <div className="carousel-container">
-        <div className="carousel">
-          <div className='carousel-item'>
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class='carousel-item'>
             <img src={imgArr[currentSlide]} alt={`Image`} />
           </div>
         </div>
-        <button colorScheme='blue' className="carousel-button prev" onClick={prevSlide}> &#10094; </button>
-        <button colorScheme='blue' className="carousel-button next" onClick={nextSlide}> &#10095; </button>
+        <button colorScheme='blue' class="carousel-button prev" onClick={prevSlide}> &#10094; </button>
+        <button colorScheme='blue' class="carousel-button next" onClick={nextSlide}> &#10095; </button>
       </div>
       <Box id="country_main" border={"1px solid red"}>
         <Heading>{region}</Heading>
         <Box id="country_Container">
           {countryArr && countryArr.length > 0 && countryArr.map((elem, ind) => {
             return (
-              <Box border={"1px solid"} key={ind}>
-                <Box>
-                  <Image onClick={() => handleCountry(elem.CountryName)} src='https://www.planetware.com/wpimages/2020/11/europe-top-attractions-colosseum-rome.jpg' />
+              <Box id="country_card_parent" key={ind}>
+                <Box overflow={'hidden'} h={'80%'} >
+                  <Box as={'img'} className='country_img' onClick={() => handleCountry(elem.CountryName)} src={elem.countryImage} ></Box>
                 </Box>
-                <Heading size={'lg'}>{elem.CountryName}</Heading>
+                <Box p={"10px 0px"}> <Heading size={'md'}>{elem.CountryName}</Heading></Box>
               </Box>
             )
           })}
@@ -154,11 +151,11 @@ export const Country = () => {
       <Box>
         <Heading>Reviews</Heading>
         <Box id="review_container">
-          <Carousel responsive={responsive} 
-           swipeable={true}
-           showDots={true}
-           removeArrowOnDeviceType={["tablet", "mobile"]}
-            >
+          <Carousel responsive={responsive}
+            swipeable={true}
+            showDots={true}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+          >
             <ReviewCard />
             <ReviewCard />
             <ReviewCard />
@@ -166,6 +163,24 @@ export const Country = () => {
           </Carousel>
         </Box>
       </Box>
+
+      <Box id="book_container_main">
+      <Heading>Book <span style={{color:"orange"}}>Now !</span></Heading>
+        <Box id="book_container">
+          <Box id="book_container_left">
+            <Image src="https://img.freepik.com/premium-photo/vector-tourist-couples-with-travel-bags-illustration_575980-4178.jpg?w=2000" />
+          </Box>
+          <Box id='book_container_right'>
+            <Heading size="lg">Discover your next adventure! Book your dream trip today.</Heading>
+            <Text>Embark on a grand odyssey. Book a trip that will leave a lasting legacy.
+              Ignite your wanderlust and seize the world!
+              Secure your epic journey, and experience the majesty of our planet like never before
+            </Text>
+            <Button as={Link} to="/book">Book</Button>
+          </Box>
+        </Box>
+      </Box>
+      <Footer />
     </div>
   )
 }

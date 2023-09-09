@@ -5,12 +5,11 @@ import { Nav } from './Nav'
 import { Footer } from './Footer'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { continentInfo } from '../Redux/action';
 import { useSearchParams } from 'react-router-dom';
+import { ReviewCard, responsive } from './Country';
+import Carousel from 'react-multi-carousel';
 
 export const Continent = () => {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const dispatch = useDispatch()
   const navigate = useNavigate()
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -163,6 +162,38 @@ export const Continent = () => {
             </Box>
           )
         })}
+      </Box>
+      <Box>
+        <Heading>Reviews</Heading>
+        <Box id="review_container">
+          <Carousel responsive={responsive}
+            swipeable={true}
+            showDots={true}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+          >
+            <ReviewCard />
+            <ReviewCard />
+            <ReviewCard />
+            <ReviewCard />
+          </Carousel>
+        </Box>
+      </Box>
+
+      <Box id="book_container_main">
+        <Heading>Book <span style={{color:"orange"}}>Now !</span></Heading>
+        <Box id="book_container">
+          <Box id="book_container_left">
+            <Image src="https://img.freepik.com/premium-photo/vector-tourist-couples-with-travel-bags-illustration_575980-4178.jpg?w=2000" />
+          </Box>
+          <Box id='book_container_right'>
+            <Heading size="lg">Discover your next adventure! Book your dream trip today.</Heading>
+            <Text>Embark on a grand odyssey. Book a trip that will leave a lasting legacy.
+              Ignite your wanderlust and seize the world!
+              Secure your epic journey, and experience the majesty of our planet like never before
+            </Text>
+            <Button  as={Link} to="/book">Book</Button>
+          </Box>
+        </Box>
       </Box>
       <Footer />
     </Box>
