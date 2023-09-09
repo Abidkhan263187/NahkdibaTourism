@@ -9,9 +9,9 @@ export const AllRoutes = () => {
     <div>
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/continent' element={<Continent/>}/>
-            <Route path='/country' element={<Country/>}/>
-            <Route path='/state'  element={<State/>} />
+            <Route path='/allcontinent' element={<Continent/>}/>
+            <Route path='/continent/:region' element={<Country/>}/>
+            <Route path='/:region/:country'  element={<State/>} />
         </Routes>
     </div>
   )

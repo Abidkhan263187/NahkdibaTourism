@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { useSelector, } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import { Box, Button, Heading, Image } from '@chakra-ui/react'
@@ -9,33 +9,30 @@ import { countryInfo } from '../Redux/action'
 import './style.css'
 import { Nav } from './Nav'
 
-const images = [
-  "https://www.kiwi.com/stories/wp-content/uploads/2018/08/shutterstock_715816141-1920x700.jpg",
-  "https://media.easemytrip.com/media/Blog/International/637007769287754861/637007769287754861PbwuEm.jpg",
-  "https://c.myholidays.com/blog/blog/content/images/2020/10/Top-Places-To-Visit-In-Saudi-Arabia-For-An-Exciting-Vacation.jpg",
-  "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/05/Best-Time-to-Visit-Andaman-and-Nicobar.jpg?resize=1200%2C855&ssl=1",
-  "https://adm.dookinternational.com/dook/images/country/z9MQ4CJM1649160119.jpg",
-  "https://images7.alphacoders.com/110/thumb-1920-1108495.png"
-];
+
 
 export const Country = () => {
+  const [imgArr,setImgArr]=useState([])
+  const [searchParams,setSearchParams]=useSearchParams()
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [currentSlide, setCurrentSlide] = useState(0);
   const [countryArr, setCountryArr] = useState([])
 
+  const {region}=useParams()
   const { continent } = useSelector((store) => {
     return store;
   })
 
 
+
   useEffect(() => {
     (async () => {
       try {
-        await axios.get(`https://tired-cormorant.cyclic.app/tourism?Continent=${continent}`).then(({ data }) => {
+        await axios.get(`https://tired-cormorant.cyclic.app/tourism?Continent=${region}`).then(({ data }) => {
           let countriesarr = data.data[0].countries
           setCountryArr(countriesarr)
-          console.log(countriesarr)
+          // console.log(countriesarr)
           // console.log(countriesarr.CountryName)
         })
       } catch (error) {
@@ -43,19 +40,34 @@ export const Country = () => {
       }
     })()
   }, [])
+   useEffect(() => {
+    (async () => {
+      try {
+        await axios.get(`https://tired-cormorant.cyclic.app/tourism?Continent=${region}`).then(({ data }) => {
+          let images = data.data[0].images
+          setImgArr(images)
+          console.log(images)
+          // console.log(countriesarr.CountryName)
+        })
+      } catch (error) {
+        console.log(error, "eroor while getting country")
+      }
+    })()
+  }, [])
+ 
 
   const handleCountry = (country) => {
 
-    dispatch(countryInfo(country));
-    navigate('/state')
+    // dispatch(countryInfo(country));
+    navigate(`/${region}/${country}`)
   }
 
   const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1));
+    setCurrentSlide((prevSlide) => (prevSlide === 0 ? imgArr.length - 1 : prevSlide - 1));
   };
 
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
+    setCurrentSlide((prevSlide) => (prevSlide === imgArr.length - 1 ? 0 : prevSlide + 1));
   };
 
   useEffect(() => {
@@ -73,7 +85,7 @@ export const Country = () => {
         <div className="carousel">
 
           <div className='carousel-item'>
-            <img src={images[currentSlide]} alt={`Image`} />
+            <img src={imgArr[currentSlide]} alt={`Image`} />
           </div>
         </div>
         <button colorScheme='blue' className="carousel-button prev" onClick={prevSlide}>

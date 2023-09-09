@@ -73,7 +73,7 @@ export const Home = () => {
           <Text fontSize={['2xl', '3xl', '4xl']} color="gray.100" mb={4}>
             Explore the World!
           </Text>
-          <Button colorScheme='orange' onClick={()=>navigate('/continent')}>Plan Trip!</Button>
+          <Button colorScheme='orange' onClick={()=>navigate('/allcontinent')}>Plan Trip!</Button>
         </Box>
       </Center>
     </Box>

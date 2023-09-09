@@ -3,13 +3,15 @@ import { Box, Button, Heading, Image, Link, Text } from '@chakra-ui/react'
 import './style.css';
 import { Nav } from './Nav'
 import { Footer } from './Footer'
-import {useNavigate} from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import { continentInfo } from '../Redux/action';
+import { useSearchParams } from 'react-router-dom';
 
 export const Continent = () => {
+  const [searchParams, setSearchParams] = useSearchParams()
   const dispatch = useDispatch()
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
@@ -28,8 +30,8 @@ export const Continent = () => {
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
-      name: "Russia",
-      imageSrc: "https://i.natgeofe.com/k/415419c5-3768-4c8f-8697-f90de7a6075b/russia-st-basils.jpg?w=1084.125&h=609",
+      name: "Australia",
+      imageSrc: "https://c4.wallpaperflare.com/wallpaper/396/433/109/city-sydney-sydney-opera-house-photography-wallpaper-preview.jpg",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     },
     {
@@ -100,10 +102,9 @@ export const Continent = () => {
     };
   }, [currentSlide]);
 
-  const handleContinent=(continent)=>{
-
-    dispatch(continentInfo(continent));
-    navigate('/country')
+  const handleContinent = (continent) => {
+    // dispatch(continentInfo(continent));
+    navigate(`/continent/${continent}`)
   }
 
   return (
@@ -138,30 +139,30 @@ export const Continent = () => {
                 <div className="content">
                   <Heading id="continent_name">{continent.name}</Heading>
                   <p>{continent.description}</p>
-                  <Button colorScheme='blue'  onClick={()=>handleContinent(continent.name)}>Explore Continent</Button>
+                  <Button colorScheme='blue' onClick={() => handleContinent(continent.name)}>Explore Continent</Button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </Box>
-      <Heading>News And <span style={{color:"orange"}}> Events</span></Heading>
+      <Heading>News And <span style={{ color: "orange" }}> Events</span></Heading>
       <Box id="events_news_main">
-       
-       {Events_News.map((elem,ind)=>{
-        return(
-          <Box id="Event_news_container">
-            <Box id="news_event_img_div">
-              <Image src={elem.image}/>
+
+        {Events_News.map((elem, ind) => {
+          return (
+            <Box id="Event_news_container">
+              <Box id="news_event_img_div">
+                <Image src={elem.image} />
+              </Box>
+              <Box id="new_details">
+                <Text fontWeight={'700'} color={'orange'} fontSize={'lg'}>{elem.info}</Text>
+                <strong>{elem.headline}</strong>
+                <Text color={'gray'} >{elem.details}</Text>
+              </Box>
             </Box>
-            <Box id="new_details">
-              <Text fontWeight={'700'} color={'orange'} fontSize={'lg'}>{elem.info}</Text>
-              <strong>{elem.headline}</strong>
-              <Text  color={'gray'} >{elem.details}</Text>
-            </Box>
-          </Box>
-        )
-       })}
+          )
+        })}
       </Box>
       <Footer />
     </Box>
