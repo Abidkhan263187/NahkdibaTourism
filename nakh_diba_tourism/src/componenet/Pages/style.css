@@ -367,3 +367,62 @@ text-align: start;
   height: 100%;
 }
 
+/* continent gallery  start  */
+#gallery_container{
+  display: grid;
+  margin: auto;
+  width: 95%;
+  grid-template-columns: repeat(3,1fr);
+  padding: 20px 60px;
+  gap: 25px;
+}
+
+
+.card_container_galarry {
+   
+  /* width: 350px; */
+  /* height: 220px; */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.card_container_galarry:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card_container_galarry:hover .card-overlay {
+  opacity: 1;
+  height: 100%;
+}
+
+/* review card start  */
+
+#review_container{
+ 
+margin: 20px auto;
+  width: 80%;
+
+
+}
+#reviews_card{
+  padding: 10px;
+  margin-left: 20px;
+  margin-bottom: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#review_card_left>img{
+  margin: auto;
+  /* border: 1px solid; */
+  width: 40%;
+  border-radius: 100px;
+}
+
+#review_card_right{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
