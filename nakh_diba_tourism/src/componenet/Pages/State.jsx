@@ -122,8 +122,7 @@ export const State = () => {
                   <Link to={`/${region}/${country}/${elem.StateName}`}> <Button colorScheme={'orange'} color={'white'} mt="10px" size="sm">See places</Button></Link>
                 </Box>
               </Box>
-            )
-          })}
+            )})}
         </Box>
       </Box>
       <Box>
