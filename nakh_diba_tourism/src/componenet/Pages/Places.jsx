@@ -4,14 +4,14 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { Nav } from './Nav';
-import { Slider } from './State';
+import { BookCard, Slider } from './State';
 import { StarIcon } from '@chakra-ui/icons';
 import { Footer } from './Footer';
 export const Places = () => {
   const { state, country, region } = useParams();
   const [places, setPlaces] = useState([]);
   const [hotel, setHotel] = useState([])
-  const [gif,setGif]=useState("")
+  const [gif, setGif] = useState("")
 
   useEffect(() => {
     (async () => {
@@ -19,7 +19,7 @@ export const Places = () => {
         const response = await axios.get(
           `https://tired-cormorant.cyclic.app/tourism?Continent=${region}&CountryName=${country}&StateName=${state}`
         );
-        const stateGif= response.data.data[0].state[0][0].stateGif
+        const stateGif = response.data.data[0].state[0][0].stateGif
         console.log(stateGif)
         const place = response.data.data[0].state[0][0].places;
         const hotels = response.data.data[0].state[0][0].hotels;
@@ -38,7 +38,7 @@ export const Places = () => {
       <Nav />
       {/* <Slider /> */}
       <Box >
-        <Image width={"100%"} src={gif}/>
+        <Image id="slider_gif" src={gif} />
       </Box>
       <Heading>{state}</Heading>
       <Box h={'max-content'} gap={'10px'} display={'flex'} mb={'20px'} mt={"40px"}>
@@ -72,7 +72,7 @@ export const Places = () => {
           {hotel && hotel.length > 0 && hotel.map((elem, ind) => {
             return (
               <Box p={'5px 5px 0px 5px'} margin={'auto'} maxW='sm' w={"90%"} borderWidth='1px' borderRadius='lg' >
-                <Image margin={"auto"} src={elem.Image} alt="img" />
+                <Image margin={"auto"} w={"100%"} h={"100%"} src={elem.Image} alt="img" />
                 <Box p='6' textAlign={'start'} >
                   <Box display='flex' alignItems='baseline'>
                     <Badge borderRadius='full' px='2' colorScheme='teal'>
@@ -101,7 +101,7 @@ export const Places = () => {
                   </Box>
 
                   <Flex alignItems={'center'} justifyContent={'space-between'} > <strong>${elem.PriceRange}</strong><Box as='span' color='gray.600' fontSize='sm'> <s id="s">${elem.Mrp}</s></Box>
-                    <p  style={{color:"green",fontWeight:"700"}}><strong>{elem.Discount} </strong>Off</p>
+                    <p style={{ color: "green", fontWeight: "700" }}><strong>{elem.Discount} </strong>Off</p>
                   </Flex>
 
                   <Box display='flex' mt='2' alignItems='center'>
@@ -121,6 +121,7 @@ export const Places = () => {
         </Box>
 
       </Box>
+      <BookCard img="https://img.freepik.com/premium-vector/happy-young-couple-traveling-with-suitcase-bags-isolated-cartoon-characters-vector-man-woman_316839-762.jpg?w=360" />
       <Footer />
     </Box>
   );

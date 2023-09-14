@@ -6,6 +6,7 @@ import { Footer } from './Footer'
 import { useNavigate } from 'react-router-dom'
 import { ReviewCard, responsive } from './Country';
 import Carousel from 'react-multi-carousel';
+import { BookCard } from './State';
 
 export const Continent = () => {
   const navigate = useNavigate()
@@ -41,7 +42,7 @@ export const Continent = () => {
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     }
   ];
-   const Events_News = [
+  const Events_News = [
     {
       image: "https://www.planetware.com/wpimages/2019/09/india-amritsar-top-attractions-golden-temple.jpg",
       info: "Golden Temple 1977",
@@ -160,22 +161,7 @@ export const Continent = () => {
         </Box>
       </Box>
 
-      <Box id="book_container_main">
-        <Heading>Book <span style={{ color: "orange" }}>Now !</span></Heading>
-        <Box id="book_container">
-          <Box id="book_container_left">
-            <Image src="https://img.freepik.com/premium-photo/travel-tourism-suitcase-landmarks_744409-16.jpg" />
-          </Box>
-          <Box id='book_container_right'>
-            <Heading size="lg">Discover your next adventure! Book your dream trip today.</Heading>
-            <Text>Embark on a grand odyssey. Book a trip that will leave a lasting legacy.
-              Ignite your wanderlust and seize the world!
-              Secure your epic journey, and experience the majesty of our planet like never before
-            </Text>
-            <Button as={Link} to="/book">Book</Button>
-          </Box>
-        </Box>
-      </Box>
+      <BookCard img="https://img.freepik.com/premium-photo/travel-tourism-suitcase-landmarks_744409-16.jpg" />
       <Footer />
     </Box>
   );

@@ -10,6 +10,7 @@ import { StarIcon } from '@chakra-ui/icons'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Footer } from './Footer'
+import { BookCard } from './State'
 
 export const responsive = {
   superLargeDesktop: {
@@ -113,7 +114,7 @@ export const Country = () => {
         <button colorScheme='blue' class="carousel-button prev" onClick={prevSlide}> &#10094; </button>
         <button colorScheme='blue' class="carousel-button next" onClick={nextSlide}> &#10095; </button>
       </div>
-      <Box id="country_main" border={"1px solid red"}>
+      <Box id="country_main" >
         <Heading>{region}</Heading>
         <Box id="country_Container">
           {countryArr && countryArr.length > 0 && countryArr.map((elem, ind) => {
@@ -164,22 +165,7 @@ export const Country = () => {
         </Box>
       </Box>
 
-      <Box id="book_container_main">
-      <Heading>Book <span style={{color:"orange"}}>Now !</span></Heading>
-        <Box id="book_container">
-          <Box id="book_container_left">
-            <Image src="https://img.freepik.com/premium-photo/vector-tourist-couples-with-travel-bags-illustration_575980-4178.jpg?w=2000" />
-          </Box>
-          <Box id='book_container_right'>
-            <Heading size="lg">Discover your next adventure! Book your dream trip today.</Heading>
-            <Text>Embark on a grand odyssey. Book a trip that will leave a lasting legacy.
-              Ignite your wanderlust and seize the world!
-              Secure your epic journey, and experience the majesty of our planet like never before
-            </Text>
-            <Button as={Link} to="/book">Book</Button>
-          </Box>
-        </Box>
-      </Box>
+      <BookCard img="https://img.freepik.com/premium-photo/vector-tourist-couples-with-travel-bags-illustration_575980-4178.jpg?w=2000" />
       <Footer />
     </div>
   )

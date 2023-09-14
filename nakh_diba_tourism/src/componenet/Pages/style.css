@@ -1,7 +1,7 @@
-*{
-padding: 0%;
-margin: 0%;
-box-sizing: border-box;
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
 }
 
 #footer_main {
@@ -38,9 +38,7 @@ box-sizing: border-box;
   list-style: none;
 }
 
-#footer_scnd {
-
-}
+#footer_scnd {}
 
 #social_media {
   justify-content: center;
@@ -180,10 +178,7 @@ box-sizing: border-box;
     }
 
     .face {
-      &.face1 .content {
-       
-
-      }
+      &.face1 .content {}
 
       &.face2 {
         position: relative;
@@ -253,90 +248,97 @@ box-sizing: border-box;
 
 /* news& events start  */
 
-#events_news_main{
+#events_news_main {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
- padding:  40px;
- width: 100%;
- gap: 10px 20px;
- margin: auto;
-  border: 1px solid red;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 40px;
+  width: 100%;
+  gap: 10px 20px;
+  margin: auto;
+  /* border: 1px solid red; */
 }
-#Event_news_container{
 
- display: flex;
+#Event_news_container {
+
+  display: flex;
   width: 100%;
   height: 130px;
   margin: auto;
   border: 1px solid rgb(224, 224, 224);
   border-radius: 10px;
 }
-#news_event_img_div>img{
+
+#news_event_img_div>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 5px;
 
 }
-#news_event_img_div{
+
+#news_event_img_div {
   width: 40%;
   height: 100%;
 
 }
 
-#new_details{
-padding: 0px 10px;
-text-align: start;
+#new_details {
+  padding: 0px 10px;
+  text-align: start;
 }
+
 /* news &events end  */
 
 /* country Start  */
 
-#country_main{
+#country_main {
   padding: 20px;
 }
-#country_Container{
+
+#country_Container {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 5px 20px;
 }
-#country_card_parent{
+
+#country_card_parent {
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-border-radius: 10px;
+  border-radius: 10px;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-.country_img{
+.country_img {
 
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease-in-out;
 }
-#country_card_parent>div:hover .country_img{
+
+#country_card_parent>div:hover .country_img {
   transform: scale(1.2);
 }
 
 
 /* state start  */
 
-#state_container{
+#state_container {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 
   padding: 20px;
 }
 
 .card_container {
-   
+
   width: 300px;
   height: 200px;
   position: relative;
@@ -351,6 +353,7 @@ border-radius: 10px;
   object-fit: cover;
   transition: transform 0.5s ease-in-out;
 }
+
 .card_container:hover .card-image {
   transform: scale(1.1);
 }
@@ -389,18 +392,18 @@ border-radius: 10px;
 }
 
 /* continent gallery  start  */
-#gallery_container{
+#gallery_container {
   display: grid;
   margin: auto;
   width: 95%;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   padding: 20px 60px;
   gap: 25px;
 }
 
 
 .card_container_galarry {
-   
+
   /* width: 350px; */
   /* height: 220px; */
   position: relative;
@@ -421,28 +424,30 @@ border-radius: 10px;
 
 /* review card start  */
 
-#review_container{
- 
-margin: 20px auto;
+#review_container {
+
+  margin: 20px auto;
   width: 80%;
 
 
 }
-#reviews_card{
+
+#reviews_card {
   padding: 10px;
   margin-left: 20px;
   margin-bottom: 25px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 10px;
 }
-#review_card_left>img{
+
+#review_card_left>img {
   margin: auto;
   /* border: 1px solid; */
   width: 40%;
   border-radius: 100px;
 }
 
-#review_card_right{
+#review_card_right {
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -450,90 +455,108 @@ margin: 20px auto;
 }
 
 /* book part start  */
-#book_container_main{
-  border: 2px solid green;
+#book_container_main {
+  /* border: 2px solid green; */
   margin: 20px 0px;
   padding: 20px 40px;
 
 }
-#book_container{
+
+#book_container {
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   height: 60vh;
   margin-top: 20px;
   border-radius: 10px;
 }
-#book_container>div{
+
+#book_container>div {
   width: 50%;
   /* height: 50vh; */
   /* border: 1px solid blue; */
 }
-#book_container_left>img{
+
+#book_container_left>img {
   width: 70%;
   height: 100%;
   object-fit: contain;
 }
-#book_container_right{
-margin:  auto;
-height: 70%;
-display: grid;
-place-items: center;
-padding: 10px 40px;
+
+#book_container_right {
+  margin: auto;
+  height: 70%;
+  display: grid;
+  place-items: center;
+  padding: 10px 40px;
 }
-#book_container_right>a{
-width: 50%;
-background-color: orange;
+
+#book_container_right>a {
+  width: 50%;
+  background-color: orange;
 }
 
 /* places start  */
-#place_main{
-  display:flex;  border-radius:10px; padding:20px;
+#place_main {
+  display: flex;
+  border-radius: 10px;
+  padding: 20px;
   border: 1px solid rgb(206, 205, 205);
   height: max-content;
   /* margin-bottom: -50px; */
 }
-#place_main.card_container{
-  
-}
 
-#place_left{
+#place_main.card_container {}
+
+#place_left {
   width: 30%;
 
 }
-#place_left>img{
+
+#place_left>img {
   width: 100%;
   height: 100%;
 }
-#place_right{
+
+#place_right {
   width: 70%;
   text-align: start;
   padding: 10px 20px;
 
 }
 
-#places_container{
+#places_container {
   display: grid;
   padding: 40px;
-  grid-template-columns: repeat(1,1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
-  height:100%;
+  height: 100%;
   border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-#hotel_container{
+
+#hotel_container {
   border-radius: 5px;
-  width:30%;
+  width: 30%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  gap:10px;
+  gap: 10px;
   padding: 20px;
-  display:grid;
-  grid-template-columns: repeat(1,1fr);
-height: 700px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  height: 900px;
   overflow-y: auto;
 
 }
-#s{
+
+#s {
   font-size: small;
   margin-left: -40px;
   color: gray;
+}
+
+/* slider gif start  */
+#slider_gif {
+  width: 100%;
+  height: 80vh;
+  object-fit: fill;
+  margin-bottom: 30px;
 }

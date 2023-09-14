@@ -46,39 +46,32 @@ const Events_News = [
   }
 ]
 
-export const Slider=()=>{
-  const images = [
-    "https://www.kiwi.com/stories/wp-content/uploads/2018/08/shutterstock_715816141-1920x700.jpg",
-    "https://media.easemytrip.com/media/Blog/International/637007769287754861/637007769287754861PbwuEm.jpg",
-    "https://c.myholidays.com/blog/blog/content/images/2020/10/Top-Places-To-Visit-In-Saudi-Arabia-For-An-Exciting-Vacation.jpg",
-    "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/05/Best-Time-to-Visit-Andaman-and-Nicobar.jpg?resize=1200%2C855&ssl=1",
-    "https://adm.dookinternational.com/dook/images/country/z9MQ4CJM1649160119.jpg",
-    "https://images7.alphacoders.com/110/thumb-1920-1108495.png"
-  ];
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const prevSlide = () => { setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1)); };
-  const nextSlide = () => { setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1)); };
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 2000);
-    return () => { clearInterval(interval); };
-  }, [currentSlide]);
-
-  return(
-    <div className="carousel-container">
-        <div className="carousel">
-          <div className='carousel-item'><img src={images[currentSlide]} alt={`Image`} /></div>
-        </div>
-        <button colorScheme='blue' className="carousel-button prev" onClick={prevSlide}> &#10094;</button>
-        <button colorScheme='blue' className="carousel-button next" onClick={nextSlide}>&#10095; </button>
-      </div>
+export const BookCard = ({ img }) => {
+  return (
+    <Box id="book_container_main">
+      <Heading>Book <span style={{ color: "orange" }}>Now !</span></Heading>
+      <Box id="book_container">
+        <Box id="book_container_left">
+          <Image src={img} />
+        </Box>
+        <Box id='book_container_right'>
+          <Heading size="lg">Discover your next adventure! Book your dream trip today.</Heading>
+          <Text>Embark on a grand odyssey. Book a trip that will leave a lasting legacy.
+            Ignite your wanderlust and seize the world!
+            Secure your epic journey, and experience the majesty of our planet like never before
+          </Text>
+          <Button as={Link} to="/book">Book</Button>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 export const State = () => {
- 
+
   const { country, region } = useParams()
   const [statesArr, setStatesArr] = useState([])
   const [galArr, setGalArr] = useState([])
+  const [gif, setGif] = useState("")
 
 
 
@@ -88,6 +81,8 @@ export const State = () => {
         await axios.get(`https://tired-cormorant.cyclic.app/tourism?Continent=${region}&CountryName=${country}`).
           then(({ data }) => {
             const states = data.data[0].countries[0].states
+            const countryGif = data.data[0].countries[0].countryGif
+            setGif(countryGif)
             setStatesArr(states)
             // console.log(states)
           })
@@ -111,13 +106,16 @@ export const State = () => {
     })()
   }, [])
 
- 
+
 
   return (
     <Box>
       <Nav />
-      <Slider/>
-      <Box border={"1px solid green"} mt={'20px'}>
+      {/* <Slider/> */}
+      <Box >
+        <Image id="slider_gif" src={gif} />
+      </Box>
+      <Box  mt={'20px'}>
         <Heading>{country}</Heading>
         <Box id="state_container">
           {statesArr.length > 0 && statesArr && statesArr.map((elem, ind) => {
@@ -125,36 +123,37 @@ export const State = () => {
               <Box className="card_container"  >
                 <Box className="card-image" as='img' src={elem.stateImage}></Box>
                 <Box className="card-overlay">
-                  <h3 className="card-title" style={{ fontWeight: "700" ,color:"orange"}}>{elem.StateName}</h3>
+                  <h3 className="card-title" style={{ fontWeight: "700", color: "orange" }}>{elem.StateName}</h3>
                   <p className="card-description">Explore the  famous places</p>
                   <Link to={`/${region}/${country}/${elem.StateName}`}> <Button colorScheme={'orange'} color={'white'} mt="10px" size="sm">See places</Button></Link>
                 </Box>
               </Box>
-            )})}
+            )
+          })}
         </Box>
       </Box>
       <Box>
-      <Box>
-      <Heading>News And <span style={{ color: "orange" }}> Events</span></Heading>
-      <Box id="events_news_main">
+        <Box>
+          <Heading>News And <span style={{ color: "orange" }}> Events</span></Heading>
+          <Box id="events_news_main">
 
-        {Events_News.map((elem, ind) => {
-          return (
-            <Box id="Event_news_container">
-              <Box id="news_event_img_div">
-                <Image src={elem.image} />
-              </Box>
-              <Box id="new_details">
-                <Text fontWeight={'700'} color={'orange'} fontSize={'lg'}>{elem.info}</Text>
-                <strong>{elem.headline}</strong>
-                <Text color={'gray'} >{elem.details}</Text>
-              </Box>
-            </Box>
-          )
-        })}
-      </Box>
-      </Box>
-        <Heading>Most <span style={{color:"orange"}}>Visited Places</span> </Heading>
+            {Events_News.map((elem, ind) => {
+              return (
+                <Box id="Event_news_container">
+                  <Box id="news_event_img_div">
+                    <Image src={elem.image} />
+                  </Box>
+                  <Box id="new_details">
+                    <Text fontWeight={'700'} color={'orange'} fontSize={'lg'}>{elem.info}</Text>
+                    <strong>{elem.headline}</strong>
+                    <Text color={'gray'} >{elem.details}</Text>
+                  </Box>
+                </Box>
+              )
+            })}
+          </Box>
+        </Box>
+        <Heading>Most <span style={{ color: "orange" }}>Visited Places</span> </Heading>
         <Box id="gallery_container">
           {galArr && galArr.length > 0 && galArr.map((elem, ind) => {
             return (
@@ -171,26 +170,8 @@ export const State = () => {
         </Box>
       </Box>
 
+      <BookCard img="https://www.transparentpng.com/thumb/travel/RALK0S-travel-suitcase-airplane-photo-tour-clipart-photo.png" />
 
-
-      <Box id="book_container_main">
-        <Heading>Book <span style={{ color: "orange" }}>Now !</span></Heading>
-        <Box id="book_container">
-          <Box id="book_container_left">
-            <Image src="https://www.transparentpng.com/thumb/travel/RALK0S-travel-suitcase-airplane-photo-tour-clipart-photo.png" />
-          </Box>
-          <Box id='book_container_right'>
-            <Heading size="lg">Discover your next adventure! Book your dream trip today.</Heading>
-            <Text>Embark on a grand odyssey. Book a trip that will leave a lasting legacy.
-              Ignite your wanderlust and seize the world!
-              Secure your epic journey, and experience the majesty of our planet like never before
-            </Text>
-            <Button as={Link} to="/book">Book</Button>
-          </Box>
-        </Box>
-      </Box>
-
-     
       <Footer />
 
     </Box>
