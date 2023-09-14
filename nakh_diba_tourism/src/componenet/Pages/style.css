@@ -5,7 +5,7 @@ box-sizing: border-box;
 }
 
 #footer_main {
-  border: 1px solid;
+
   padding: 0px 0px 20px 0px;
   background-color: rgb(43, 42, 42);
   color: rgb(224, 224, 224);
@@ -16,7 +16,7 @@ box-sizing: border-box;
 #footer_fst {
   display: flex;
   justify-content: space-between;
-  border: 1px solid;
+
   padding: 10px 50px;
 }
 
@@ -39,7 +39,7 @@ box-sizing: border-box;
 }
 
 #footer_scnd {
-  border: 1px solid;
+
 }
 
 #social_media {
@@ -116,7 +116,7 @@ box-sizing: border-box;
 
 .container {
   width: 100%;
-  border: 1px solid;
+
   position: relative;
   display: grid;
   padding: 40px 80px;
@@ -331,7 +331,7 @@ border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 20px;
-  border: 1px solid;
+
   padding: 20px;
 }
 
@@ -486,10 +486,19 @@ background-color: orange;
 }
 
 /* places start  */
+#place_main{
+  display:flex;  border-radius:10px; padding:20px;
+  border: 1px solid rgb(206, 205, 205);
+  height: max-content;
+  /* margin-bottom: -50px; */
+}
+#place_main.card_container{
+  
+}
 
 #place_left{
   width: 30%;
-  border: 1px solid;
+
 }
 #place_left>img{
   width: 100%;
@@ -499,21 +508,32 @@ background-color: orange;
   width: 70%;
   text-align: start;
   padding: 10px 20px;
-  border: 1px solid;
+
 }
 
 #places_container{
+  display: grid;
+  padding: 40px;
+  grid-template-columns: repeat(1,1fr);
+  gap: 10px;
+  height:100%;
+  border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 #hotel_container{
-
+  border-radius: 5px;
   width:30%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  padding:10px;
   gap:10px;
+  padding: 20px;
   display:grid;
   grid-template-columns: repeat(1,1fr);
-  height:1000px;
+height: 700px;
   overflow-y: auto;
 
+}
+#s{
+  font-size: small;
+  margin-left: -40px;
+  color: gray;
 }
