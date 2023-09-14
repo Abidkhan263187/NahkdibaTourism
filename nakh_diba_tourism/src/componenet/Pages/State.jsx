@@ -46,7 +46,7 @@ const Events_News = [
   }
 ]
 
-export const State = () => {
+export const Slider=()=>{
   const images = [
     "https://www.kiwi.com/stories/wp-content/uploads/2018/08/shutterstock_715816141-1920x700.jpg",
     "https://media.easemytrip.com/media/Blog/International/637007769287754861/637007769287754861PbwuEm.jpg",
@@ -55,10 +55,31 @@ export const State = () => {
     "https://adm.dookinternational.com/dook/images/country/z9MQ4CJM1649160119.jpg",
     "https://images7.alphacoders.com/110/thumb-1920-1108495.png"
   ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const prevSlide = () => { setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1)); };
+  const nextSlide = () => { setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1)); };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 2000);
+    return () => { clearInterval(interval); };
+  }, [currentSlide]);
+
+  return(
+    <div className="carousel-container">
+        <div className="carousel">
+          <div className='carousel-item'><img src={images[currentSlide]} alt={`Image`} /></div>
+        </div>
+        <button colorScheme='blue' className="carousel-button prev" onClick={prevSlide}> &#10094;</button>
+        <button colorScheme='blue' className="carousel-button next" onClick={nextSlide}>&#10095; </button>
+      </div>
+  )
+}
+export const State = () => {
+ 
   const { country, region } = useParams()
   const [statesArr, setStatesArr] = useState([])
   const [galArr, setGalArr] = useState([])
-  const [currentSlide, setCurrentSlide] = useState(0);
+
 
 
   useEffect(() => {
@@ -90,25 +111,12 @@ export const State = () => {
     })()
   }, [])
 
-  const prevSlide = () => { setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1)); };
-  const nextSlide = () => { setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1)); };
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 2000);
-    return () => { clearInterval(interval); };
-  }, [currentSlide]);
-
+ 
 
   return (
     <Box>
       <Nav />
-      <div className="carousel-container">
-        <div className="carousel">
-          <div className='carousel-item'><img src={images[currentSlide]} alt={`Image`} /></div>
-        </div>
-        <button colorScheme='blue' className="carousel-button prev" onClick={prevSlide}> &#10094;</button>
-        <button colorScheme='blue' className="carousel-button next" onClick={nextSlide}>&#10095; </button>
-      </div>
+      <Slider/>
       <Box border={"1px solid green"} mt={'20px'}>
         <Heading>{country}</Heading>
         <Box id="state_container">

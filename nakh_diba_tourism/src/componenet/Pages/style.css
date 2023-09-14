@@ -484,3 +484,36 @@ padding: 10px 40px;
 width: 50%;
 background-color: orange;
 }
+
+/* places start  */
+
+#place_left{
+  width: 30%;
+  border: 1px solid;
+}
+#place_left>img{
+  width: 100%;
+  height: 100%;
+}
+#place_right{
+  width: 70%;
+  text-align: start;
+  padding: 10px 20px;
+  border: 1px solid;
+}
+
+#places_container{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#hotel_container{
+
+  width:30%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  padding:10px;
+  gap:10px;
+  display:grid;
+  grid-template-columns: repeat(1,1fr);
+  height:1000px;
+  overflow-y: auto;
+
+}
