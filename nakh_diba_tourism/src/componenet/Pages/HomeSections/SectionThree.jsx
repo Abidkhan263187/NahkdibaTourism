@@ -36,7 +36,7 @@ const SpecialPlace_card = ({ icon, photo, location }) => {
 export const SectionThree = () => {
     return (
         <Box id='SectionThree_card_container'>
-            <Heading> Special <span style={{color:"orange"}}>Offer</span></Heading>
+          
             <Box id='SectionThree_card'>
                 <SpecialPlace_card location="Paris" photo="https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900" icon="fa-solid fa-location-dot fa-lg" />
                 <SpecialPlace_card location="New York" photo="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/bd/6f/17.jpg" icon="fa-solid fa-location-dot fa-lg" />

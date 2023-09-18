@@ -1,66 +1,17 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import { Box, Button, Heading, Image, Text } from '@chakra-ui/react'
 import './style.css'
 import { Nav } from './Nav'
 import { StarIcon } from '@chakra-ui/icons'
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Footer } from './Footer'
-import { BookCard } from './State'
+import { BookCard } from './BookCard'
+import { Review } from './Review'
 
-export const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-    slidesToSlide: 2
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 1
 
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 1
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1
-  }
-};
-export const ReviewCard = () => {
-  return (
-    <Box id="reviews_card" >
-      <Box id="review_card_left">
-        <Image src='https://avatars.githubusercontent.com/u/115173026?v=4' />
-      </Box>
-      <Box id="review_card_right">
-        <Heading size={'lg'}>Abid khan</Heading>
-        <Text>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Iusto, fuga culpa. Provident corrupti voluptatem sint.
-        </Text>
-        <Text>
-          {Array(5)
-            .fill('')
-            .map((_, i) => (
-              <StarIcon
-                key={i}
-                color={i < 4 ? 'orange' : 'gray.300'}
-              />
-            ))}
-        </Text>
-      </Box>
-    </Box>
-  )
-}
 
 export const Country = () => {
   const [imgArr, setImgArr] = useState([])
@@ -114,7 +65,7 @@ export const Country = () => {
         <button colorScheme='blue' class="carousel-button prev" onClick={prevSlide}> &#10094; </button>
         <button colorScheme='blue' class="carousel-button next" onClick={nextSlide}> &#10095; </button>
       </div>
-      <Box id="country_main" >
+      <Box id="country_main"  mt={"30px"}>
         <Heading>{region}</Heading>
         <Box id="country_Container">
           {countryArr && countryArr.length > 0 && countryArr.map((elem, ind) => {
@@ -130,7 +81,7 @@ export const Country = () => {
         </Box>
       </Box>
 
-      <Box>
+      <Box mt={"30px"}>
         <Heading>Gallery</Heading>
         <Box id="gallery_container">
           {galArr && galArr.length > 0 && galArr.map((elem, ind) => {
@@ -149,21 +100,7 @@ export const Country = () => {
       </Box>
 
 
-      <Box>
-        <Heading>Reviews</Heading>
-        <Box id="review_container">
-          <Carousel responsive={responsive}
-            swipeable={true}
-            showDots={true}
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-          >
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-          </Carousel>
-        </Box>
-      </Box>
+      <Review/>
 
       <BookCard img="https://img.freepik.com/premium-photo/vector-tourist-couples-with-travel-bags-illustration_575980-4178.jpg?w=2000" />
       <Footer />

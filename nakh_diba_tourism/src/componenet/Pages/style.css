@@ -520,7 +520,7 @@
 #place_right {
   width: 70%;
   text-align: start;
-  padding: 10px 20px;
+  padding: 0px 20px;
 
 }
 
@@ -559,4 +559,14 @@
   height: 80vh;
   object-fit: fill;
   margin-bottom: 30px;
+}
+
+/* Booking start  */
+#booking_main{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px 50px;
+  border-radius: 20px;
 }

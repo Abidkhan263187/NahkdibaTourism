@@ -12,6 +12,7 @@ import {
   Text,
   Center,
   Button,
+  Heading,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import DatePicker from 'react-datepicker';
@@ -84,6 +85,7 @@ export const Home = () => {
         <SectionTwo_home />
       </Box>
       <Box>
+      <Heading> Special <span style={{color:"orange"}}>Offer</span></Heading>
         <SectionThree />
       </Box>
       <Box>

@@ -4,9 +4,11 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { Nav } from './Nav';
-import { BookCard, Slider } from './State';
+import { BookCard } from './BookCard';
 import { StarIcon } from '@chakra-ui/icons';
 import { Footer } from './Footer';
+import { Review } from './Review';
+// import { ReviewCard } from './Country';
 export const Places = () => {
   const { state, country, region } = useParams();
   const [places, setPlaces] = useState([]);
@@ -37,9 +39,10 @@ export const Places = () => {
     <Box>
       <Nav />
       {/* <Slider /> */}
-      <Box >
+      {region === "Asia" && <Box >
         <Image id="slider_gif" src={gif} />
-      </Box>
+      </Box>}
+
       <Heading>{state}</Heading>
       <Box h={'max-content'} gap={'10px'} display={'flex'} mb={'20px'} mt={"40px"}>
 
@@ -78,25 +81,12 @@ export const Places = () => {
                     <Badge borderRadius='full' px='2' colorScheme='teal'>
                       New
                     </Badge>
-                    <Box
-                      color='gray.500'
-                      fontWeight='semibold'
-                      letterSpacing='wide'
-                      fontSize='xs'
-                      textTransform='uppercase'
-                      ml='2'
-                    >
+                    <Box color='gray.500' fontWeight='semibold' letterSpacing='wide' fontSize='xs' textTransform='uppercase' ml='2'>
                       2 beds &bull; 3 baths
                     </Box>
                   </Box>
 
-                  <Box
-                    mt='1'
-                    fontWeight='semibold'
-                    as='h4'
-                    lineHeight='tight'
-                    noOfLines={1}
-                  >
+                  <Box mt='1' fontWeight='semibold' as='h4' lineHeight='tight' noOfLines={1} >
                     {elem.HotelName}
                   </Box>
 
@@ -121,7 +111,9 @@ export const Places = () => {
         </Box>
 
       </Box>
+
       <BookCard img="https://img.freepik.com/premium-vector/happy-young-couple-traveling-with-suitcase-bags-isolated-cartoon-characters-vector-man-woman_316839-762.jpg?w=360" />
+      <Review />
       <Footer />
     </Box>
   );

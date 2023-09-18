@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Flex, Spacer, Link, Heading, Button, useDisclosure } from '@chakra-ui/react';
+import { Box, Flex, Spacer, Heading, Button, useDisclosure } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+// import {Link} from 'react-router-dom'
 
  export const Nav=()=> {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -34,49 +36,51 @@ import { Box, Flex, Spacer, Link, Heading, Button, useDisclosure } from '@chakra
         
           width={"40%"}
         display={{ base: 'none', md: 'flex' }}>
-          <Link id='nav_li' color="black" fontSize={'large'} fontWeight={'700'} ml={4} href="/">
+         
+          <Box as={Link}  id='nav_li' color="black" fontSize={'large'} fontWeight={'700'} ml={4} to="/">
             Home
-          </Link>
-           <Link id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
+          </Box>
+           <Box as={Link}  id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} to="/packages">
             Packages
-          </Link>
-          <Link  id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
+          </Box>
+          <Box as={Link}   id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4}to="/overview">
             News
-          </Link>
-          <Link id='nav_li' color="black" fontSize={'large'} fontWeight={'700'} ml={4} href="#">
-            About
-          </Link>
-          <Link id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
+          </Box>
+         
+          <Box as={Link}  id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} to="/book">
             Book
-          </Link>
-          <Link id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} href="#">
+          </Box>
+          <Box as={Link}  id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} to="/contact">
             Contact
-          </Link>
+          </Box>
+          <Box as={Link}  id='nav_li' color="black"fontSize={'large'} fontWeight={'700'} ml={4} to="#">
+            Login
+          </Box>
         </Flex>
       </Flex>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <Box mt={4} display={{ base: 'block', md: 'none' }}>
-          <Link color="white" ml={4} href="#">
+        <Box as={Link}  mt={4} display={{ base: 'block', md: 'none' }}>
+          <Box as={Link}  color="white" ml={4} to="#">
             Home
-          </Link>
-          <Link color="white" ml={4} href="#">
+          </Box>
+          <Box as={Link}  color="white" ml={4} to="#">
             packages
-          </Link>
-            <Link color="white" ml={4} href="#">
+          </Box>
+            <Box as={Link}  color="white" ml={4} to="/news_events">
             News
-          </Link>
-          <Link color="white" ml={4} href="#">
+          </Box>
+          <Box as={Link}  color="white" ml={4} to="#">
             Book
-          </Link>
-          <Link color="white" ml={4} href="#">
-            About
-          </Link>
-          <Link color="white" ml={4} href="#">
+          </Box>
+    
+          <Box as={Link}  color="white" ml={4} to="#">
             Contact
-          </Link>
+          </Box>
+          <Box/>
         </Box>
+       
       )}
     </Box>
   );
