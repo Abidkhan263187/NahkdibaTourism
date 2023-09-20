@@ -98,7 +98,7 @@ export const State = () => {
         <Image id="slider_gif" src={gif} />
       </Box>
       <Box  mt={'20px'}>
-        <Heading>{country}</Heading>
+      <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>{country}</Heading>
         <Box id="state_container">
           {statesArr.length > 0 && statesArr && statesArr.map((elem, ind) => {
             return (
@@ -116,7 +116,7 @@ export const State = () => {
       </Box>
       <Box>
         <Box>
-          <Heading>News And <span style={{ color: "orange" }}> Events</span></Heading>
+          <Heading >News And <span style={{ color: "orange" }}> Events</span></Heading>
           <Box id="events_news_main">
 
             {Events_News.map((elem, ind) => {

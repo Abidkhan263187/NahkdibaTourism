@@ -24,7 +24,7 @@ function ContactPage() {
     <Box>
       <Nav />
       <Box p={4} maxW="600px" mx="auto" mt="50px" mb="50px">
-        <Heading>Contact Us</Heading>
+        <Heading>Contact <span style={{color:"orange"}}>Us</span> </Heading>
         <Text mt={4} fontSize="lg">
           We'd love to hear from you. Send us a message, and we'll get back to you as soon as possible.
         </Text>

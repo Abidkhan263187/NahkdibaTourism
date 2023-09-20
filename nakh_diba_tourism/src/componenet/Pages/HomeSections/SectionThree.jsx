@@ -1,9 +1,16 @@
 import { StarIcon } from '@chakra-ui/icons'
 import { Box, Button, HStack, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 
 
 const SpecialPlace_card = ({ icon, photo, location }) => {
+    const navigate=useNavigate()
+
+    const handleBook=()=>{
+        navigate('/book')
+        // console.log("yes")
+    }
     return (
         <Box id="specialPlace_card">
             <Box>
@@ -29,7 +36,7 @@ const SpecialPlace_card = ({ icon, photo, location }) => {
                 <Text fontWeight={'600'}>$98,000</Text>
                 <s>$1,34567</s>
             </HStack>
-            <Button fontWeight={'600'} fontSize={"lg"} bgColor={'orange'} color={'white'}>Book</Button>
+            <Button fontWeight={'600'} fontSize={"lg"} bgColor={'orange'} color={'white'} onClick={handleBook} >Book</Button>
         </Box>
     )
 }

@@ -66,7 +66,7 @@ export const Country = () => {
         <button colorScheme='blue' class="carousel-button next" onClick={nextSlide}> &#10095; </button>
       </div>
       <Box id="country_main"  mt={"30px"}>
-        <Heading>{region}</Heading>
+        <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>{region}</Heading>
         <Box id="country_Container">
           {countryArr && countryArr.length > 0 && countryArr.map((elem, ind) => {
             return (
@@ -82,7 +82,7 @@ export const Country = () => {
       </Box>
 
       <Box mt={"30px"}>
-        <Heading>Gallery</Heading>
+        <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>Gallery</Heading>
         <Box id="gallery_container">
           {galArr && galArr.length > 0 && galArr.map((elem, ind) => {
             return (

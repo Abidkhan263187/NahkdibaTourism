@@ -1,15 +1,17 @@
 import { Badge, Box, Button, Flex, Heading, Image, Text, border } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { Nav } from './Nav';
 import { BookCard } from './BookCard';
 import { StarIcon } from '@chakra-ui/icons';
 import { Footer } from './Footer';
 import { Review } from './Review';
+
 // import { ReviewCard } from './Country';
 export const Places = () => {
+const navigate=useNavigate()
   const { state, country, region } = useParams();
   const [places, setPlaces] = useState([]);
   const [hotel, setHotel] = useState([])
@@ -35,6 +37,11 @@ export const Places = () => {
     })();
   }, []);
 
+  const handleBook=()=>{
+    navigate('/book')
+    // console.log("yes")
+}
+
   return (
     <Box>
       <Nav />
@@ -43,7 +50,7 @@ export const Places = () => {
         <Image id="slider_gif" src={gif} />
       </Box>}
 
-      <Heading>{state}</Heading>
+      <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>{state}</Heading>
       <Box h={'max-content'} gap={'10px'} display={'flex'} mb={'20px'} mt={"40px"}>
 
 
@@ -103,7 +110,7 @@ export const Places = () => {
                       {elem.Review} reviews
                     </Box>
                   </Box>
-                  <Button w={'100%'} colorScheme='orange' size={'sm'} mt={'10px'}>Book</Button>
+                  <Button w={'100%'} colorScheme='orange' size={'sm'} mt={'10px'} onClick={handleBook}>Book</Button>
                 </Box>
               </Box>
             )
