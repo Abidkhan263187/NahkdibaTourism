@@ -1,8 +1,10 @@
-import { CONTINENT, COUNTRY } from "./actionTypes";
+import { CONTINENT, COUNTRY, LOGIN, SIGNUP } from "./actionTypes";
 
 const initialState={
 continent:'',
-country:''
+country:'',
+login:false,
+
 }
 export const reducer=(store=initialState,action)=>{
     switch(action.type){
@@ -12,6 +14,9 @@ export const reducer=(store=initialState,action)=>{
       }
       case COUNTRY:{
         return{...store,country:action.payload}
+      }
+      case LOGIN:{
+        return{...store,login:action.payload}
       }
       default:return store;
     }

@@ -8,7 +8,7 @@ export const Packages = () => {
   return (
     <div>
         <Nav/>
-        <Heading mt={"30px"}>Best <span style={{color:"orange"}}>Packages</span> </Heading>
+        <Heading mt={"60px"}>Best <span style={{color:"orange"}}>Packages</span> </Heading>
         <SectionThree/>
         <Footer/>
     </div>

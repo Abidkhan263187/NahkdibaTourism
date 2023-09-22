@@ -63,7 +63,7 @@ export const Home = () => {
       <Center height="100vh">
         <Box
           mt={"100px"}
-          boxShadow="lg"
+          // boxShadow="lg"
           w={['100%', '80%', '80%']}
           p={['10px', '15px']}
           borderRadius={'10px'}
@@ -74,7 +74,7 @@ export const Home = () => {
           <Text fontSize={['2xl', '3xl', '4xl']} color="gray.100" mb={4}>
             Explore the World!
           </Text>
-          <Button colorScheme='orange' onClick={()=>navigate('/allcontinent')}>Plan Trip!</Button>
+          <Button w={'30%'} colorScheme='orange' onClick={()=>navigate('/allcontinent')}>Plan Trip!</Button>
         </Box>
       </Center>
     </Box>

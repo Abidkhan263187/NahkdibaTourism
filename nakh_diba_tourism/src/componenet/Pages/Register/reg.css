@@ -1,0 +1,35 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+  }
+
+#login_main{
+    /* border: 1px solid orange ; */
+    border-radius: 10px;
+    margin: 5% auto 0% auto;
+    padding: 20px 30px;
+    width: 25%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+#create_acc:hover{
+    text-decoration: underline;
+}
+#signup_main{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    border-radius: 10px;
+    margin: 1% auto 0% auto;
+    padding: 20px 30px;
+    width: 30%;
+}
+#signup_main input{
+    outline: none;
+    
+}
+#homeButton{
+    position: relative;
+    top: 0;
+
+    border: 1px solid;
+  
+}

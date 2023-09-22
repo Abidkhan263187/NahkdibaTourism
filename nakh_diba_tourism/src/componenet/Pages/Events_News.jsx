@@ -1,7 +1,6 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import React from 'react'
-import { Footer } from './Footer'
-import { Nav } from './Nav'
+
 export const Events_news = [
     {
       image: "https://www.planetware.com/wpimages/2019/09/india-amritsar-top-attractions-golden-temple.jpg",
@@ -44,8 +43,8 @@ export const Events_news = [
 export const Events_News = () => {
   return (
     <Box>
-        {/* <Nav/> */}
-         <Heading mt={"30px"}>News And <span style={{ color: "orange" }}> Events</span></Heading>
+      
+         <Heading mt={"60px"}>News And <span style={{ color: "orange" }}> Events</span></Heading>
       <Box id="events_news_main">
 
         {Events_news.map((elem, ind) => {
@@ -64,7 +63,7 @@ export const Events_News = () => {
         })}
       </Box>
 
-      {/* <Footer/> */}
+    
     </Box>
   )
 }

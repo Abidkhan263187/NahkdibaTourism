@@ -43,7 +43,7 @@ function BookForm() {
 
   return (
    
-      <Box  p={4}  borderRadius="lg">
+      <Box  p={4} mt={"60px"}  borderRadius="lg">
         <Image w={"100%"} height={"70vh"} objectFit={"fill"} src="https://bpc.h-cdn.co/assets/17/23/768x384/gallery-1496680745-most-beautiful-places-in-world.gif" alt="Tour Banner" borderRadius="lg" />
         <Heading mt={'7%'}> Book <span style={{color:'orange'}}>Your Trip!</span> </Heading>
         <form onSubmit={handleSubmit} id="booking_main">
