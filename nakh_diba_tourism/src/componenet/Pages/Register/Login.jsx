@@ -33,7 +33,7 @@ export const Login = () => {
 
   const gotoHome = () => {
     alert("Login successful");
-    navigate('/');
+    window.location.href='/'
   };
 
   const handleClick = () => {

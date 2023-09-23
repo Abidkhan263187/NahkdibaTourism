@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Nav } from './Nav'
 import { Footer } from './Footer'
 import { BookCard } from './BookCard'
@@ -13,6 +13,9 @@ import ReviewBox from './ReviewBox'
 
 
 export const Booking = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+  }, []);
   return (
     <div>
         <Nav/>

@@ -58,6 +58,9 @@ export const Continent = () => {
   const handleContinent = (continent) => {
     navigate(`/continent/${continent}`)
   }
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+  }, []);
 
   return (
     <Box>

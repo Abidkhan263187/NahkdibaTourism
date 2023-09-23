@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   ChakraProvider,
   Box,
@@ -20,6 +20,9 @@ import { Footer } from './Footer';
 import { FaFacebook, FaTwitter, FaInstagram, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 function ContactPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+  }, []);
   return (
     <Box>
       <Nav />

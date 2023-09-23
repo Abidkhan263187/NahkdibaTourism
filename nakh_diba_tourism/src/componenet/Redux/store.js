@@ -3,6 +3,8 @@ import thunk from 'redux-thunk'
 import { reducer } from './reducer'
  export const store=createStore(reducer,applyMiddleware(thunk))
 
- store.subscribe(()=>{
-    console.log(store.getState().login)
- })
+//  store.subscribe(()=>{
+//    //  console.log(store.getState().longi)
+//    //  console.log(store.getState().lati)
+//     console.log(store.getState().city)
+//  })

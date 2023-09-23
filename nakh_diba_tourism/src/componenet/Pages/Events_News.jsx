@@ -1,5 +1,5 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export const Events_news = [
     {
@@ -41,6 +41,10 @@ export const Events_news = [
   ]
 
 export const Events_News = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+  }, []);
   return (
     <Box>
       

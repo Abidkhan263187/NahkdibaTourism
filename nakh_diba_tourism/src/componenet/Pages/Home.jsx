@@ -1,21 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
-  Flex,
-  Input,
-  IconButton,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
   Text,
   Center,
   Button,
   Heading,
 } from '@chakra-ui/react';
-import { SearchIcon } from '@chakra-ui/icons';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import video from '../video/back_video3.mp4';
 import { Nav } from './Nav';
@@ -25,16 +15,37 @@ import { SectionThree } from './HomeSections/SectionThree';
 import { SectionFour } from './HomeSections/SectionFour';
 import { SectionFive } from './HomeSections/SectionFive';
 import { Footer } from './Footer';
-
 import {useNavigate} from 'react-router-dom' 
+import { useDispatch, useSelector } from 'react-redux';
+import { geolocator_coords, getCityName } from './geolocator';
+import { FamousPlaces } from './HomeSections/FamousPlaces';
 
 export const Home = () => {
+  const city = {
+    name: 'New York', // Replace with the name of the city you're interested in
+    latitude: 40.7128, // Replace with the latitude of the city
+    longitude: -74.0060, // Replace with the longitude of the city
+  };
 
+  const {lati,longi} =useSelector((store)=>store)
+const dispatch=useDispatch()
   const navigate=useNavigate()
-  // const [destination, setDestination] = useState('');
-  // const [startDate, setStartDate] = useState(null);
-  // const [endDate, setEndDate] = useState(null);
-  // const [adults, setAdults] = useState(1);
+
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    dispatch(geolocator_coords())
+    
+  }, []);
+
+  useEffect(()=>{
+    dispatch(getCityName(lati,longi))
+  },[lati,longi])
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+  }, []);
+
 
   const handleSearch = () => {
     // Implement your search logic here
@@ -80,6 +91,7 @@ export const Home = () => {
     </Box>
       <Box>
         <SectionOne />
+        {/* <FamousPlaces city={city}/> */}
       </Box>
       <Box>
         <SectionTwo_home />

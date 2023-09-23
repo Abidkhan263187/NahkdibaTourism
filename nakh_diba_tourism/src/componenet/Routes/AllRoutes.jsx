@@ -21,19 +21,19 @@ export const AllRoutes = () => {
   useEffect(()=>{
     const userData = JSON.parse(sessionStorage.getItem('user'));
     setUser(userData)
-  },[user])
+  },[])
   return (
     <div>
         <Routes>
-
+          {/* {console.log(user)} */}
             <Route path='/' element={<Home/>}/>
-            <Route path='/packages' element={user||login?<Packages/>:<Navigate to={'/login'}/> }/>
-            <Route path='/allcontinent' element={user||login?<Continent/>:<Navigate to={'/login'}/>}/>
+            <Route path='/packages' element={user !==null  ?<Packages/>:<Navigate to={'/login'}/> }/>
+            <Route path='/allcontinent' element={user !==null ?<Continent/>:<Navigate to={'/login'}/>}/>
             <Route path='/continent/:region' element={<Country/>}/>
             <Route path='/:region/:country'  element={<State/>} />
             <Route path='/:region/:country/:state'  element={<Places/>} />
             <Route path="/overview" element={<Overview/>} />
-            <Route path='/book' element={user||login?<Booking/>:<Navigate to={'/login'}/>} />
+            <Route path='/book' element={user !==null ?<Booking/>:<Navigate to={'/login'}/>} />
             <Route path='/contact' element={<ContactPage/>} />
             <Route path='/login' element={<Login/>}/>
             <Route path='/signup' element={<SignUp/>}/>

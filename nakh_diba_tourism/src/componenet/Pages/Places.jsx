@@ -41,6 +41,9 @@ const navigate=useNavigate()
     navigate('/book')
     // console.log("yes")
 }
+useEffect(() => {
+  window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+}, []);
 
   return (
     <Box>
