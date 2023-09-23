@@ -19,14 +19,10 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { geolocator_coords, getCityName } from './geolocator';
 import { FamousPlaces } from './HomeSections/FamousPlaces';
+import BookForm, { BookingCard } from './BookForm';
+import { BookCard } from './BookCard';
 
 export const Home = () => {
-  const city = {
-    name: 'New York', // Replace with the name of the city you're interested in
-    latitude: 40.7128, // Replace with the latitude of the city
-    longitude: -74.0060, // Replace with the longitude of the city
-  };
-
   const {lati,longi} =useSelector((store)=>store)
 const dispatch=useDispatch()
   const navigate=useNavigate()
@@ -46,11 +42,6 @@ const dispatch=useDispatch()
     window.scrollTo(0, 0); // Scroll to the top of the page on component mount
   }, []);
 
-
-  const handleSearch = () => {
-    // Implement your search logic here
-    console.log('Searching...');
-  };
 
   return (
     <><Box position="relative" overflow="hidden">
@@ -90,7 +81,9 @@ const dispatch=useDispatch()
       </Center>
     </Box>
       <Box>
-        <SectionOne />
+        {/* <SectionOne /> */}
+        <Heading mt={'7%'}> Book <span style={{color:'orange'}}>Your Trip!</span> </Heading>
+        <BookingCard/>
         {/* <FamousPlaces city={city}/> */}
       </Box>
       <Box>

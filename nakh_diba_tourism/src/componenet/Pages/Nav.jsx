@@ -27,7 +27,7 @@ export const Nav = () => {
     <Box bg="transparent" variant={'outline'} >
       <Flex alignItems="center" id="navbar">
         <Heading size="md" color="black" fontWeight={'700'} as={Link} to={'/'}>
-          <Icon as={FaToriiGate} style={{ color: 'blue' }} /> Nahkdiba.Tourism
+          <Icon as={FaToriiGate} style={{ color: 'blue' }} /> Travelena
         { city &&<Text id="log_person"> <i style={{color:"green"}} className="fa-solid fa-location-dot"></i>&nbsp;{city}</Text>}  
         </Heading>
 
