@@ -12,14 +12,15 @@
     margin-top: 10px;
 }
 #service_card{
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     display: flex;
     flex-direction: column;
     /* height: 150px; */
     justify-content: space-around;
     gap: 15px;
-    padding: 20px 0px;
+    padding: 20px;
     border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 
 }

@@ -2,9 +2,9 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-  }
+}
 
-#login_main{
+#login_main {
     /* border: 1px solid orange ; */
     border-radius: 10px;
     margin: 5% auto 0% auto;
@@ -12,24 +12,43 @@
     width: 25%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
-#create_acc:hover{
+
+#create_acc:hover {
     text-decoration: underline;
 }
-#signup_main{
+
+#signup_main {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     border-radius: 10px;
     margin: 1% auto 0% auto;
     padding: 20px 30px;
     width: 30%;
 }
-#signup_main input{
+
+#signup_main input {
     outline: none;
-    
+
 }
-#homeButton{
+
+#homeButton {
     position: relative;
     top: 0;
 
     border: 1px solid;
-  
+
+}
+
+/* forgot start  */
+#forgot_main {
+    border: 1px solid;
+    padding: 30px;
+    width: 30%;
+    margin: 5% auto;
+}
+
+#resetButton {
+    width: 50%;
+    background-color: rgb(255, 128, 0);
+    margin-top: 20px;
+    color: white;
 }

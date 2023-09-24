@@ -16,7 +16,7 @@ const Services = ({ icon, serviceName, text }) => {
 
 export const SectionTwo_home = () => {
     return (
-        <Box border={'1px solid'} mt={'40px'}>
+        <Box mt={'40px'}>
             <Heading> Services </Heading>
             <Box id="section_two_container">
 

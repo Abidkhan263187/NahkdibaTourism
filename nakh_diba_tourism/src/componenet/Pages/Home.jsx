@@ -9,34 +9,33 @@ import {
 import 'react-datepicker/dist/react-datepicker.css';
 import video from '../video/back_video3.mp4';
 import { Nav } from './Nav';
-import { SectionOne } from './SectionOne';
 import { SectionTwo_home } from './HomeSections/SectionTwo_home';
 import { SectionThree } from './HomeSections/SectionThree';
 import { SectionFour } from './HomeSections/SectionFour';
 import { SectionFive } from './HomeSections/SectionFive';
 import { Footer } from './Footer';
-import {useNavigate} from 'react-router-dom' 
+import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { geolocator_coords, getCityName } from './geolocator';
-import { FamousPlaces } from './HomeSections/FamousPlaces';
-import BookForm, { BookingCard } from './BookForm';
-import { BookCard } from './BookCard';
+
+import  { BookingCard } from './BookForm';
+
 
 export const Home = () => {
-  const {lati,longi} =useSelector((store)=>store)
-const dispatch=useDispatch()
-  const navigate=useNavigate()
+  const { lati, longi } = useSelector((store) => store)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [error, setError] = useState(null);
 
   useEffect(() => {
     dispatch(geolocator_coords())
-    
+
   }, []);
 
-  useEffect(()=>{
-    dispatch(getCityName(lati,longi))
-  },[lati,longi])
+  useEffect(() => {
+    dispatch(getCityName(lati, longi))
+  }, [lati, longi])
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top of the page on component mount
@@ -52,7 +51,8 @@ const dispatch=useDispatch()
           height: '100vh',
           position: 'absolute',
           zIndex: -1,
-          overflow: 'hidden',
+          overflow: 'hidden'
+
         }}
       >
         <video autoPlay loop muted style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
@@ -71,26 +71,26 @@ const dispatch=useDispatch()
           borderRadius={'10px'}
           zIndex={1}
           position="relative"
-          // border={"1px solid"}
+        // border={"1px solid"}
         >
           <Text fontSize={['2xl', '3xl', '4xl']} color="gray.100" mb={4}>
             Explore the World!
           </Text>
-          <Button w={'30%'} colorScheme='orange' onClick={()=>navigate('/allcontinent')}>Plan Trip!</Button>
+          <Button w={'30%'} colorScheme='orange' onClick={() => navigate('/allcontinent')}>Plan Trip!</Button>
         </Box>
       </Center>
     </Box>
       <Box>
         {/* <SectionOne /> */}
-        <Heading mt={'7%'}> Book <span style={{color:'orange'}}>Your Trip!</span> </Heading>
-        <BookingCard/>
+        <Heading mt={'7%'}> Book <span style={{ color: 'orange' }}>Your Trip!</span> </Heading>
+        <BookingCard />
         {/* <FamousPlaces city={city}/> */}
       </Box>
       <Box>
         <SectionTwo_home />
       </Box>
       <Box>
-      <Heading> Special <span style={{color:"orange"}}>Offer</span></Heading>
+        <Heading> Special <span style={{ color: "orange" }}>Offer</span></Heading>
         <SectionThree />
       </Box>
       <Box>

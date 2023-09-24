@@ -12,6 +12,7 @@ import ContactPage from '../Pages/ContactPage'
 import { Login } from '../Pages/Register/Login'
 import { SignUp } from '../Pages/Register/SignUp'
 import { useSelector } from 'react-redux'
+import { ForgotPassword } from '../Pages/Register/ForgotPassword'
 export const AllRoutes = () => {
   const {login}=useSelector((store)=>{
     return store
@@ -37,6 +38,7 @@ export const AllRoutes = () => {
             <Route path='/contact' element={<ContactPage/>} />
             <Route path='/login' element={<Login/>}/>
             <Route path='/signup' element={<SignUp/>}/>
+            <Route path='/forgotPassword' element={<ForgotPassword/>}/>
         </Routes>
     </div>
   )

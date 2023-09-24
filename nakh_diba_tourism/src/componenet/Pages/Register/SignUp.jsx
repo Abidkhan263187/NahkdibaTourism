@@ -10,11 +10,12 @@ import {
   Heading,
   Input,
   Stack,
+  Text,
   VStack,
 } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux'
 import { SignupFunc } from '../../Redux/api';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const SignUp = () => {
   const navigate = useNavigate()
@@ -72,7 +73,7 @@ export const SignUp = () => {
   return (
 
     <Box>
-       <Button size={'sm'} variant={'outline'} id="homeButton" onClick={()=>navigate('/')}>Home</Button>
+       {/* <Button size={'sm'} variant={'outline'} id="homeButton" onClick={()=>navigate('/')}>Home</Button> */}
        <VStack spacing={4} align="stretch" id="signup_main">
        <Heading w={'100%'} color='orange.400' border={'none'} variant={'outline'} size={'lg'}>SignUp Form</Heading>
       <form onSubmit={handleSubmit}>
@@ -144,7 +145,7 @@ export const SignUp = () => {
             required
           />
         </FormControl>
-        <FormControl m={'5px 0px'}>
+        <FormControl m={'10px 0px'}>
           <Checkbox
             name="privacyPolicyAccepted"
             isChecked={formData.privacyPolicyAccepted}
@@ -153,6 +154,7 @@ export const SignUp = () => {
             I accept the privacy policy
           </Checkbox>
         </FormControl>
+        <Text m="auto">Already have an Account <span style={{color:"blue",textDecoration:"underline"}}> <Link  to="/login">Login</Link></span></Text>
         <Button mt={'10px'} w={'100%'} type="submit" colorScheme="orange">
           Sign Up
         </Button>

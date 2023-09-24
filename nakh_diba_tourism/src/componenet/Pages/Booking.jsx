@@ -20,11 +20,12 @@ export const Booking = () => {
     <div>
         <Nav/>
         <BookForm />
-        <ReviewBox/>
+       
         <Heading mt={'10%'} size={'lg'}>Make Your  <span style={{color:"orange"}}>Trip  Full Of Enjoy!</span>  With Awesome <span style={{color:"orange"}}>Packages</span> </Heading>
         <SectionThree/>
-        <BookCard img="https://www.transparentpng.com/thumb/travel/RALK0S-travel-suitcase-airplane-photo-tour-clipart-photo.png" />
+        {/* <BookCard img="https://www.transparentpng.com/thumb/travel/RALK0S-travel-suitcase-airplane-photo-tour-clipart-photo.png" /> */}
         <Review/>
+        <ReviewBox/>
         <Footer/>
     </div>
   )
