@@ -15,7 +15,7 @@ export const ForgotPassword = () => {
     <Box id="forgot_main">
 
     <FormControl  m={'auto'}>
-    <FormLabel>Enter Email</FormLabel>
+    <FormLabel>Forgot Password</FormLabel>
           <Input
             type="email"
             value={email}
@@ -25,7 +25,7 @@ export const ForgotPassword = () => {
             autoComplete="nope"
             isRequired
           />
-          <Button  id="resetButton" onClick={handleReset}> Send Reset Link</Button>
+          <Button  id="resetButton" onClick={handleReset}> Send Password  Reset Link</Button>
     </FormControl>
     </Box>
   )

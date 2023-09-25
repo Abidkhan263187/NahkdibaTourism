@@ -40,14 +40,15 @@
 
 /* forgot start  */
 #forgot_main {
-    border: 1px solid;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 30px;
     width: 30%;
     margin: 5% auto;
+    border-radius: 10px;
 }
 
 #resetButton {
-    width: 50%;
+    width: max-content;
     background-color: rgb(255, 128, 0);
     margin-top: 20px;
     color: white;

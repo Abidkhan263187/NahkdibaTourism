@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SignupFunc } from '../../Redux/api';
 import { Link, useNavigate } from 'react-router-dom';
 
-function validateEmail(email) {
+export function validateEmail(email) {
   // Updated email regex for stricter validation
   const emailRegex = /^[a-zA-Z]{2,}[0-9]{2,}@(gmail\.com|yahoo\.com)$/;
   return emailRegex.test(email);
@@ -91,7 +91,10 @@ export const SignUp = () => {
 
     setFormData({
       ...formData,
+      firstName: '',
+      lastName: '',
       email: '',
+      mobileNo: '',
       password: '',
       confirmPassword: '',
     });
@@ -151,7 +154,7 @@ export const SignUp = () => {
           </FormControl>
          
           <FormControl isInvalid={!!passwordError}>
-            <FormLabel>Confirm Password</FormLabel>
+            <FormLabel >Confirm Password</FormLabel>
             <Input
              type={showPassword ? 'text' : 'password'}
               name="confirmPassword"

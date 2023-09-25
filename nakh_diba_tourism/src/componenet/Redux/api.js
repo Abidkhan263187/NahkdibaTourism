@@ -39,16 +39,16 @@ export const LoginFunc=async(loginData,gotoHome)=>{
 
 export const forgotPasword=async(email)=>{
 try {
-    await axios.post(`http://localhost:5000/password/forgot`,{
+    await axios.post('https://tired-cormorant.cyclic.app/password/forgot',{
         email:email
     },{
         headers:{
             "Content-Type":"application/json"
         }
     }).then(({data})=>{
-       alert(data.mssg)
+       alert(data.message)
         localStorage.setItem('token',JSON.stringify(data.token))
-        // console.log(data);
+        console.log(data);
     })
 } catch (error) {
     alert("Invalid Email!")
@@ -56,10 +56,10 @@ try {
 }
 }
 
-export const updatePassword=async(token,password,confirmPassword)=>{
+export const updatePassword=async(gotoHome,token,password,confirmPassword)=>{
     // console.log("api point =====",password,confirmPassword,token);
     try {
-        const response = await axios.post('http://localhost:5000/password/reset', {
+        const response = await axios.post('https://tired-cormorant.cyclic.app/password/reset', {
             password: password,
             confirmPassword: confirmPassword
         }, {
@@ -72,6 +72,7 @@ export const updatePassword=async(token,password,confirmPassword)=>{
         });
         localStorage.setItem('token',JSON.stringify(""))
         alert(response.data.mssg)
+        gotoHome()
 
         // console.log(response.data);
     } catch (error) {

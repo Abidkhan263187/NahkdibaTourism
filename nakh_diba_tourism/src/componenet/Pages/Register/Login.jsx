@@ -19,6 +19,7 @@ import { LoginFunc } from '../../Redux/api';
 import { userLogin } from '../../Redux/action';
 import { useDispatch } from 'react-redux';
 import { GoogleLoginButton } from './GoogleLoginButton';
+import { validateEmail } from './SignUp';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -27,10 +28,23 @@ export const Login = () => {
 
   const [isFormValid, setIsFormValid] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [isValidEmail, setIsValidEmail] = useState(true);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const gotoHome = () => {
     alert("Login successful");
     window.location.href = '/'
+  };
+
+
+  const handleChangeEmail = (e) => {
+    const enteredEmail = e.target.value;
+    setUser({ ...user, email: enteredEmail });
+    setIsValidEmail(validateEmail(enteredEmail));
   };
 
   const handleClick = () => {
@@ -58,22 +72,23 @@ export const Login = () => {
       <VStack spacing={4} align="stretch" id="login_main">
         <FormControl isInvalid={isFormSubmitted && !isFormValid}>
           <Heading w={'100%'} color='orange.400' border={'none'} variant={'outline'} size={'lg'}>Login Form</Heading>
-          <FormLabel mt={"30px"}>Email</FormLabel>
-          <Input
-            type="email"
-            value={user.email}
-            name="email"
-            onChange={handleInputChange}
-            placeholder={"enter email"}
-            autoComplete="nope"
-            isRequired
-          />
-          <FormErrorMessage>Field is required</FormErrorMessage>
+          <FormControl isInvalid={!isValidEmail} >
+            <FormLabel>Email</FormLabel>
+            <Input
+              type="email"
+              name="email"
+              value={user.email}
+              onChange={handleChangeEmail}
+              required
+              placeholder='enter email'
+            />
+            <FormErrorMessage>{isValidEmail ? '' : 'Invalid email address'}</FormErrorMessage>
+          </FormControl>
         </FormControl>
         <FormControl isInvalid={isFormSubmitted && !isFormValid}>
           <FormLabel>Password</FormLabel>
           <Input
-            type="password"
+              type={showPassword ? 'text' : 'password'}
             value={user.password}
             name="password"
             outlineOffset={'none'}
@@ -82,6 +97,18 @@ export const Login = () => {
             autoComplete="nope"
             isRequired
           />
+          <i
+            onClick={togglePasswordVisibility}
+            style={{
+              position: 'absolute',
+              top: '70%',
+              right: '10px',
+              transform: 'translateY(-50%)',
+              color: "gray",
+              // cursor: 'pointer'
+            }}
+            className={showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'}
+          ></i>
           <FormErrorMessage>Field is required</FormErrorMessage>
         </FormControl>
         <Flex justifyContent={'space-between'}>
@@ -94,9 +121,9 @@ export const Login = () => {
         </Button>
         <Text id="create_acc" color={"blue"} textDecoration={'underline'} as={Link} to={'/signup'}>Create A New Account</Text>
         <Box m={"auto"}>
-        <GoogleLoginButton />
+          <GoogleLoginButton />
         </Box>
-      
+
       </VStack>
     </Box>
   );
