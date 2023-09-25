@@ -1,6 +1,7 @@
 import axios from "axios"
 
 export const SignupFunc=(SignUpData,gotoLogin)=>async(dispatch,)=>{
+    // console.log(SignUpData)
     try {
         await axios.post(`https://tired-cormorant.cyclic.app/touismReg/signup`,SignUpData,{
             headers:{
@@ -12,6 +13,7 @@ export const SignupFunc=(SignUpData,gotoLogin)=>async(dispatch,)=>{
            gotoLogin()
         })
     } catch (error) {
+        console.log(error)
         // dispatch(userSignUp(false))
   
     }
@@ -25,7 +27,7 @@ export const LoginFunc=async(loginData,gotoHome)=>{
             'ContentType': 'application/json'
             }
         }).then((res)=>{
-            console.log(res.data.token,res.data.user.firstName)
+            // console.log(res.data.token,res.data.user.firstName)
             sessionStorage.setItem('user',JSON.stringify(res.data.user.firstName))
             gotoHome()  
         })
