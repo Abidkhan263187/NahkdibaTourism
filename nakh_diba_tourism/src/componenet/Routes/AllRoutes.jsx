@@ -13,6 +13,7 @@ import { Login } from '../Pages/Register/Login'
 import { SignUp } from '../Pages/Register/SignUp'
 import { useSelector } from 'react-redux'
 import { ForgotPassword } from '../Pages/Register/ForgotPassword'
+import { ResetPassword } from '../Pages/Register/ResetPassword'
 export const AllRoutes = () => {
   const {login}=useSelector((store)=>{
     return store
@@ -39,6 +40,7 @@ export const AllRoutes = () => {
             <Route path='/login' element={<Login/>}/>
             <Route path='/signup' element={<SignUp/>}/>
             <Route path='/forgotPassword' element={<ForgotPassword/>}/>
+            <Route path='/resetPassword' element={<ResetPassword/>}/>
         </Routes>
     </div>
   )

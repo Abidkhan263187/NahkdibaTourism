@@ -1,12 +1,15 @@
 import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import './reg.css'
+import { forgotPasword } from '../../Redux/api'
 export const ForgotPassword = () => {
 
   const [email,setEmail]=useState()
 
   const handleReset=()=>{
  console.log(email)
+
+ forgotPasword(email)
   }
   return (
     <Box id="forgot_main">

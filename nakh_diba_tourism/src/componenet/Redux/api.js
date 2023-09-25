@@ -1,7 +1,4 @@
 import axios from "axios"
-import { userSignUp } from "./action"
-
-
 
 export const SignupFunc=(SignUpData,gotoLogin)=>async(dispatch,)=>{
     try {
@@ -37,3 +34,46 @@ export const LoginFunc=async(loginData,gotoHome)=>{
         alert('login failed')
     }
 }
+
+export const forgotPasword=async(email)=>{
+try {
+    await axios.post(`http://localhost:5000/password/forgot`,{
+        email:email
+    },{
+        headers:{
+            "Content-Type":"application/json"
+        }
+    }).then(({data})=>{
+       alert(data.mssg)
+        localStorage.setItem('token',JSON.stringify(data.token))
+        // console.log(data);
+    })
+} catch (error) {
+    alert("Invalid Email!")
+    console.log("error whille forgot password", error)
+}
+}
+
+export const updatePassword=async(token,password,confirmPassword)=>{
+    // console.log("api point =====",password,confirmPassword,token);
+    try {
+        const response = await axios.post('http://localhost:5000/password/reset', {
+            password: password,
+            confirmPassword: confirmPassword
+        }, {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            params: {
+                token: token
+            }
+        });
+        localStorage.setItem('token',JSON.stringify(""))
+        alert(response.data.mssg)
+
+        // console.log(response.data);
+    } catch (error) {
+       
+        console.log("error while resetting password", error);
+    }
+};
