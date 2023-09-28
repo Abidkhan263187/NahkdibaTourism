@@ -15,6 +15,8 @@ import { useSelector } from 'react-redux'
 import { ForgotPassword } from '../Pages/Register/ForgotPassword'
 import { ResetPassword } from '../Pages/Register/ResetPassword'
 import {SignupForm} from '../Pages/Register/SignupForm'
+import { FinalReceipt } from '../Pages/FinalReciept'
+import SuccessfulBookPage from '../Pages/SuccessfulBookPage'
 export const AllRoutes = () => {
   const {login}=useSelector((store)=>{
     return store
@@ -43,6 +45,8 @@ export const AllRoutes = () => {
             <Route path='/forgotPassword' element={<ForgotPassword/>}/>
             <Route path='/resetPassword' element={<ResetPassword/>}/>
             <Route path='/signupform' element={<SignupForm/>}/>
+            <Route path='/reciept' element={<FinalReceipt/>}/>
+            <Route path='/success' element={<SuccessfulBookPage/>}/>
         </Routes>
     </div>
   )

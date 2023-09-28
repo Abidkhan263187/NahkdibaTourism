@@ -4,18 +4,17 @@
     box-sizing: border-box;
 }
 #section_two_container{
- 
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
     gap: 30px;
-    padding: 30px 100px;
-    margin-top: 10px;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    padding: 40px;
+   
 }
 #service_card{
-    /* border: 1px solid orange; */
+    border: 1px solid orange;
     display: flex;
     flex-direction: column;
-    /* height: 150px; */
+    width: 100%;
     justify-content: space-around;
     gap: 15px;
     padding: 20px;
@@ -31,17 +30,17 @@
 }
 
 
-
 /* ................................ */
 #SectionThree_card_container{
-    /* border: 1px solid; */
-    margin-top: 30px;
+    /* */
+   
+    gap: 30px;
+    margin:20px auto;
 }
 #SectionThree_card{
-    /* border: 1px solid; */
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+ 
     gap: 30px;
+    grid-template-columns: repeat(3,1fr);
     padding: 30px;
 }
 
@@ -94,7 +93,7 @@ background-color: rgb(3, 178, 184);
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 #section_five{
-    border: 1px solid;
+   
     width: 100%;
     margin: auto;
     margin-bottom: 40px;
@@ -103,13 +102,11 @@ background-color: rgb(3, 178, 184);
 
 #about_box{
     display: flex;
-    border: 1px solid;
+    /* */
 }
 #about_left{
-
     width: 40%;
     padding: 25px;
-   
 }
 
 #about_right{
@@ -120,4 +117,38 @@ background-color: rgb(3, 178, 184);
 #section_five span{
    
    color: orange;
+}
+
+@media  (max-width: 768px) {
+    #section_two_container{
+        grid-template-columns: repeat(1,1fr); 
+    
+    }
+    #SectionThree_card{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #about_box{
+        display: block;
+        width: 100%;
+       
+    }
+    #about_left{
+        width: 100%;
+        padding: 10px; 
+    }
+    
+    #about_right{
+       width: 100%;
+        text-align: start;
+        padding: 10px;
+    }
+    #section_five{
+
+        padding: 10px;
+    }
+    #sectionFour_grid{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    
 }

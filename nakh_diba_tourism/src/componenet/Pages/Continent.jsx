@@ -72,8 +72,8 @@ export const Continent = () => {
         <button colorScheme='blue' className="carousel-button prev" onClick={prevSlide}> &#10094;</button>
         <button colorScheme='blue' className="carousel-button next" onClick={nextSlide}> &#10095; </button>
       </div>
-      <Box id="continent_card_container" m={'40px'}>
-        <Heading> Select <span style={{ color: "orange" }}>Continents</span> </Heading>
+      <Box id="continent_card_container" >
+        <Heading mt={'20px'}> Select <span style={{ color: "orange" }}>Continents</span> </Heading>
         <div className="container">
           {continents.map((continent, index) => (
             <div className="card" key={index}>

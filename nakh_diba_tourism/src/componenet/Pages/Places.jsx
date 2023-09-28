@@ -37,7 +37,10 @@ const navigate=useNavigate()
     })();
   }, []);
 
-  const handleBook=()=>{
+  const handleBook=(hotel)=>{
+    localStorage.setItem('hotel', JSON.stringify(hotel))
+    localStorage.setItem('bookStyle',JSON.stringify('hotel'))
+    localStorage.setItem('package',JSON.stringify(''))
     navigate('/book')
     // console.log("yes")
 }
@@ -54,10 +57,10 @@ useEffect(() => {
       </Box>}
 
       <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>{state}</Heading>
-      <Box h={'max-content'} gap={'10px'} display={'flex'} mb={'20px'} mt={"40px"}>
+      <Box h={'max-content'} gap={'10px'} display={['grid','flex']} mb={'20px'} mt={"40px"}>
 
 
-        <Box id="places_container" w={"70%"} >
+        <Box id="places_container" >
           {places.map((elem, ind) => (
             <Box key={ind} id="place_main" >
               <Box className="card_container"  >
@@ -113,7 +116,7 @@ useEffect(() => {
                       {elem.Review} reviews
                     </Box>
                   </Box>
-                  <Button w={'100%'} colorScheme='orange' size={'sm'} mt={'10px'} onClick={handleBook}>Book</Button>
+                  <Button w={'100%'} colorScheme='orange' size={'sm'} mt={'10px'} onClick={()=>handleBook(elem)}>Book</Button>
                 </Box>
               </Box>
             )

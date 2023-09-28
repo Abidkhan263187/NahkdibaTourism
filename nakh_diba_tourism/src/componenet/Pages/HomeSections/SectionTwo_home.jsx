@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from '@chakra-ui/react'
+import { Box, Grid, Heading, Text } from '@chakra-ui/react'
 import React from 'react'
 import './section.css'
 
@@ -7,7 +7,7 @@ const Services = ({ icon, serviceName, text }) => {
     return (
         <Box id='service_card'>
             <Box id="service_font"><i className={icon}></i></Box>
-            <Heading size={'md'} color={'gray.600'}>{serviceName}</Heading>
+            <Heading size={'md'}  color={'gray.600'}>{serviceName}</Heading>
             <Text>{text}
             </Text>
         </Box>
@@ -16,9 +16,9 @@ const Services = ({ icon, serviceName, text }) => {
 
 export const SectionTwo_home = () => {
     return (
-        <Box mt={'40px'}>
-            <Heading> Services </Heading>
-            <Box id="section_two_container">
+        <Box >
+            <Heading mt={'20px'}> Services </Heading>
+            <Grid  id="section_two_container" >
 
 
             <Services icon="fa-solid fa-hotel fa-2xl" serviceName="Arrodable Hotels"
@@ -36,7 +36,7 @@ export const SectionTwo_home = () => {
 
 
 
-        </Box>
+        </Grid>
         </Box>
     )
 }

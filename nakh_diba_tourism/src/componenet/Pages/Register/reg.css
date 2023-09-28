@@ -53,3 +53,18 @@
     margin-top: 20px;
     color: white;
 }
+
+@media (max-width:768px) {
+    #login_main {
+        width: 100%;
+    }
+
+    #signup_main {
+        width: 95%;
+    }
+
+    #forgot_main {
+        width: 95%;
+
+    }
+}

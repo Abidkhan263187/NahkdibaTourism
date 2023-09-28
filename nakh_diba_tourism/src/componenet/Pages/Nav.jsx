@@ -19,6 +19,7 @@ export const Nav = () => {
   const handleLogout = () => {
     sessionStorage.removeItem('user');
     setUser(null);
+    localStorage.clear()
     window.location.href = "/login"
 
   };
@@ -36,6 +37,7 @@ export const Nav = () => {
           display={{ base: 'block', md: 'none' }}
           onClick={isOpen ? onClose : onOpen}
           ml={3}
+          id='mob_menue_nav'
           variant="outline"
           colorScheme="white"
         >
@@ -82,34 +84,37 @@ export const Nav = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <Box mt={4} display={{ base: 'block', md: 'none' }}>
-          <Box as={Link} color="white" ml={4} to="#">
+        <Box id="mob_nav" mt={4}>
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/">
             Home
           </Box>
-          <Box as={Link} color="white" ml={4} to="#">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/packages">
             Packages
           </Box>
-          <Box as={Link} color="white" ml={4} to="/news_events">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/overview">
             News
           </Box>
-          <Box as={Link} color="white" ml={4} to="#">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/book">
             Book
           </Box>
-          <Box as={Link} color="white" ml={4} to="#">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/contact">
             Contact
           </Box>
           {user ? (
-            <Flex alignItems="center">
-              <Box color="white" fontSize={'large'} ml={4}>
-                {user.name}
-              </Box>
-              <Button variant="link" onClick={handleLogout}>
-                Logout
+           
+            <VStack overflow={'auto'} alignItems="center">
+
+              <Button variant="link" color='white' onClick={handleLogout}>
+                <Icon as={FaSignOutAlt} ml={2} /> Logout
               </Button>
-            </Flex>
+              <Box id="log_person">
+                {user}
+              </Box>
+            </VStack>
           ) : (
-            <Box as={Link} color="white" ml={4} to="/login">
-              Login
+           
+            <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'800'} ml={4} to="/login">
+              <Icon as={FaUser} mr={2} /> Login
             </Box>
           )}
         </Box>

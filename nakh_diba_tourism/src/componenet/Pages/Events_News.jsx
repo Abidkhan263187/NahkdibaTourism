@@ -47,8 +47,8 @@ export const Events_News = () => {
   }, []);
   return (
     <Box>
-      
-         <Heading mt={"60px"}>News And <span style={{ color: "orange" }}> Events</span></Heading>
+
+      <Heading mt={"60px"}>News And <span style={{ color: "orange" }}> Events</span></Heading>
       <Box id="events_news_main">
 
         {Events_news.map((elem, ind) => {

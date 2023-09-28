@@ -7,6 +7,7 @@ import {SectionThree} from './HomeSections/SectionThree'
 import { Heading } from '@chakra-ui/react'
 import {Review} from './Review'
 import ReviewBox from './ReviewBox'
+import { Service } from './Services'
 
 
 
@@ -20,10 +21,9 @@ export const Booking = () => {
     <div>
         <Nav/>
         <BookForm />
-       
+        <Service/>
         <Heading mt={'10%'} size={'lg'}>Make Your  <span style={{color:"orange"}}>Trip  Full Of Enjoy!</span>  With Awesome <span style={{color:"orange"}}>Packages</span> </Heading>
         <SectionThree/>
-        {/* <BookCard img="https://www.transparentpng.com/thumb/travel/RALK0S-travel-suitcase-airplane-photo-tour-clipart-photo.png" /> */}
         <Review/>
         <ReviewBox/>
         <Footer/>

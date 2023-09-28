@@ -82,8 +82,8 @@ export const Home = () => {
     </Box>
       <Box>
         {/* <SectionOne /> */}
-        <Heading mt={'7%'}> Book <span style={{ color: 'orange' }}>Your Trip!</span> </Heading>
-        <BookingCard />
+        {/* <Heading mt={'7%'}> Book <span style={{ color: 'orange' }}>Your Trip!</span> </Heading> */}
+        {/* <BookingCard /> */}
         {/* <FamousPlaces city={city}/> */}
       </Box>
       <Box>

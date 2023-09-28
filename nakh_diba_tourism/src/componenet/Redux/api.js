@@ -39,7 +39,7 @@ export const LoginFunc=async(loginData,gotoHome)=>{
 
 export const forgotPasword=async(email)=>{
 try {
-    await axios.post('https://tired-cormorant.cyclic.app/password/forgot',{
+    await axios.post('http://localhost:5000/password/forgot',{
         email:email
     },{
         headers:{

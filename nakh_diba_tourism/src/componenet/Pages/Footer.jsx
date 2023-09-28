@@ -15,7 +15,7 @@ export const Footer = () => {
 
 
                 <Box>
-                    <Heading size="md" mb={'10px'}>Branch Locations</Heading>
+                    <Heading id="footer_haed" size="md" mb={'10px'}>Branch Locations</Heading>
                     <Box>
                         <ul>
                             <a href='#'><li>India</li></a>

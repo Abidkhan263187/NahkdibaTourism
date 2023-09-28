@@ -112,8 +112,8 @@ export const Login = () => {
           <FormErrorMessage>Field is required</FormErrorMessage>
         </FormControl>
         <Flex justifyContent={'space-between'}>
-          <Checkbox>Remember me</Checkbox>
-          <Text id="create_acc" color={'red.500'} as={Link} to="/forgotPassword">forgot password ?</Text>
+          <Checkbox >Remember me</Checkbox>
+          <Text fontSize={["sm",""]} id="create_acc" color={'red.500'} as={Link} to="/forgotPassword">forgot password ?</Text>
         </Flex>
 
         <Button colorScheme="orange" onClick={handleClick} isDisabled={!isFormValid}>
