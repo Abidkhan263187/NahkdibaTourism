@@ -7,6 +7,7 @@ import {
   Heading,
   Button,
   Flex,
+  useToast,
 } from '@chakra-ui/react';
 
 const ServiceBox = ({ icon, title, description, onClick }) => {
@@ -23,6 +24,7 @@ const ServiceBox = ({ icon, title, description, onClick }) => {
 };
 const packArr = JSON.parse(localStorage.getItem('services')) || []
 export const Service = () => {
+  const toast=useToast()
   const [selectedService, setSelectedService] = useState(packArr);
 
 
@@ -60,7 +62,25 @@ export const Service = () => {
   ];
 
 
-  const handleServiceClick = (title) => { setSelectedService((prev) => [...prev, title]) };
+  const handleServiceClick = (title) => {
+    if (!selectedService.includes(title)) {
+      setSelectedService((prev) => [...prev, title]);
+      
+      toast({
+        title: `Service '${title}' added`,
+        position: 'bottom',
+        isClosable: true,
+      });
+    }else{
+      toast({
+        title: `Service '${title}' Already present`,
+        position: 'bottom',
+        isClosable: true,
+      });
+    }
+    // If the title is already in the array, you can choose to show a different message or take other actions.
+  };
+  
 
   useEffect(() => {
     localStorage.setItem('services', JSON.stringify(selectedService))

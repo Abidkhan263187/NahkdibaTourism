@@ -671,6 +671,10 @@
   padding: 20px;
   width: 80%;
   margin: 40px auto;
+  transform: transition 0.8s ease-in-out;
+}
+#extraService_main>div:hover{
+background-color: #f4f4f4;
 }
 
 /* media queries >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */

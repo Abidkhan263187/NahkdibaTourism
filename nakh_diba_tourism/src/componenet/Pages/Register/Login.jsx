@@ -12,6 +12,7 @@ import {
   Input,
   Text,
   VStack,
+  useToast,
 } from '@chakra-ui/react';
 import './reg.css'
 import { Link, useNavigate } from 'react-router-dom';
@@ -24,6 +25,7 @@ import { validateEmail } from './SignUp';
 export const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
+  const toast = useToast()
   const [user, setUser] = useState({ email: "", password: "" });
 
   const [isFormValid, setIsFormValid] = useState(false);
@@ -36,8 +38,17 @@ export const Login = () => {
   };
 
   const gotoHome = () => {
-    alert("Login successful");
-    window.location.href = '/'
+    toast({
+      title: 'Welcome back !',
+      description: "Login Successfully",
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    })
+    setTimeout(()=>{
+      window.location.href = '/'
+    },2500)
+  
   };
 
 

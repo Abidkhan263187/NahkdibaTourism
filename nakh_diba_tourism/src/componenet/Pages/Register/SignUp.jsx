@@ -13,6 +13,7 @@ import {
   Text,
   Tooltip,
   VStack,
+  useToast,
 } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { SignupFunc } from '../../Redux/api';
@@ -26,6 +27,7 @@ export function validateEmail(email) {
 
 export const SignUp = () => {
   const [email, setEmail] = useState('');
+  const toast=useToast()
   const [isValidEmail, setIsValidEmail] = useState(true);
   const navigate = useNavigate();
   const { signUp } = useSelector((store) => {
@@ -70,9 +72,19 @@ export const SignUp = () => {
   };
 
   const gotoLogin = () => {
-    alert('signin successful');
-    navigate('/login');
-    console.log('yes');
+    toast({
+      title: 'Account created.',
+      description: "We've created your account for you.",
+      status: 'success',
+      duration: 1000,
+      isClosable: true,
+    })
+
+    setTimeout(()=>{
+      navigate('/login');
+    },2000)
+    // 
+  
   };
 
   const handleChangeEmail = (e) => {

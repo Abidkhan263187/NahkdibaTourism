@@ -146,7 +146,7 @@ export const BookingCard = () => {
                 </Select>
               </FormControl>
             </HStack>
-            <Button colorScheme="teal" w={'80%'} type='submit'  >
+            <Button colorScheme="orange" w={'80%'} type='submit'  >
               Submit
             </Button>
           </VStack>
