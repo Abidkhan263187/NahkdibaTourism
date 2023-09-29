@@ -11,7 +11,7 @@ import { Review } from './Review';
 
 // import { ReviewCard } from './Country';
 export const Places = () => {
-const navigate=useNavigate()
+  const navigate = useNavigate()
   const { state, country, region } = useParams();
   const [places, setPlaces] = useState([]);
   const [hotel, setHotel] = useState([])
@@ -37,16 +37,16 @@ const navigate=useNavigate()
     })();
   }, []);
 
-  const handleBook=(hotel)=>{
+  const handleBook = (hotel) => {
     localStorage.setItem('hotel', JSON.stringify(hotel))
-    localStorage.setItem('bookStyle',JSON.stringify('hotel'))
-    localStorage.setItem('package',JSON.stringify(''))
+    localStorage.setItem('bookStyle', JSON.stringify('hotel'))
+    localStorage.setItem('package', JSON.stringify(''))
     navigate('/book')
     // console.log("yes")
-}
-useEffect(() => {
-  window.scrollTo(0, 0); // Scroll to the top of the page on component mount
-}, []);
+  }
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+  }, []);
 
   return (
     <Box>
@@ -57,7 +57,7 @@ useEffect(() => {
       </Box>}
 
       <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>{state}</Heading>
-      <Box h={'max-content'} gap={'10px'} display={['grid','flex']} mb={'20px'} mt={"40px"}>
+      <Box h={'max-content'} gap={'10px'}  display={['grid', 'grid', 'grid', 'flex']} mb={'20px'} mt={"40px"}>
 
 
         <Box id="places_container" >
@@ -73,7 +73,7 @@ useEffect(() => {
               </Box>
 
               <Box id="place_right" >
-                <Heading size={'lg'} color={'gray.700'} > {elem.placeName}</Heading>
+                <Heading size={'lg'} color={'gray.700'} id="place_name" > {elem.placeName}</Heading>
                 <Text color={"gray.600"}>{elem.desc}
                 </Text>
                 <Button size={'sm'} colorScheme='orange' variant={'outline'} mt={'20px'} as={Link} to={'#'}>Read more</Button>
@@ -84,10 +84,10 @@ useEffect(() => {
 
         </Box>
         <Box id="hotel_container">
-          <Heading size={'md'}>Hotels</Heading>
+          <Heading id="hotel_name" size={'md'}>Hotels</Heading>
           {hotel && hotel.length > 0 && hotel.map((elem, ind) => {
             return (
-              <Box p={'5px 5px 0px 5px'} margin={'auto'} maxW='sm' w={"90%"} borderWidth='1px' borderRadius='lg' >
+              <Box p={'5px 5px 0px 5px'} margin={'auto'} id="hotelCard" maxW='sm' w={"90%"} borderWidth='1px' borderRadius='lg' >
                 <Image margin={"auto"} w={"100%"} h={"100%"} src={elem.Image} alt="img" />
                 <Box p='6' textAlign={'start'} >
                   <Box display='flex' alignItems='baseline'>
@@ -116,7 +116,7 @@ useEffect(() => {
                       {elem.Review} reviews
                     </Box>
                   </Box>
-                  <Button w={'100%'} colorScheme='orange' size={'sm'} mt={'10px'} onClick={()=>handleBook(elem)}>Book</Button>
+                  <Button w={'100%'} colorScheme='orange' size={'sm'} mt={'10px'} onClick={() => handleBook(elem)}>Book</Button>
                 </Box>
               </Box>
             )

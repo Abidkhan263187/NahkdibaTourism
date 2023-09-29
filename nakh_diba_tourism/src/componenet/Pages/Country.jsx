@@ -69,7 +69,7 @@ export const Country = () => {
         <button colorScheme='blue' class="carousel-button next" onClick={nextSlide}> &#10095; </button>
       </div>
       <Box id="country_main"  mt={"30px"}>
-        <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>{region}</Heading>
+        <Heading w={['','','100%','95%']} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>{region}</Heading>
         <Box id="country_Container">
           {countryArr && countryArr.length > 0 && countryArr.map((elem, ind) => {
             return (
@@ -77,7 +77,7 @@ export const Country = () => {
                 <Box overflow={'hidden'} h={'80%'} >
                   <Box as={'img'} className='country_img' onClick={() => handleCountry(elem.CountryName)} src={elem.countryImage} ></Box>
                 </Box>
-                <Box p={"10px 0px"}> <Heading size={'md'}>{elem.CountryName}</Heading></Box>
+                <Box p={"10px 0px"}> <Heading size={['','sm','sm','md']}>{elem.CountryName}</Heading></Box>
               </Box>
             )
           })}

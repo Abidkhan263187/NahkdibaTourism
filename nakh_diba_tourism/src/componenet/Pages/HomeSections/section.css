@@ -1,16 +1,18 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
-#section_two_container{
+
+#section_two_container {
     gap: 30px;
     margin: auto;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding: 40px;
-   
+
 }
-#service_card{
+
+#service_card {
     border: 1px solid orange;
     display: flex;
     flex-direction: column;
@@ -23,29 +25,31 @@
 
 
 }
-#service_font{
+
+#service_font {
     font-size: 25px;
     color: orange;
-    
+
 }
 
 
 /* ................................ */
-#SectionThree_card_container{
+#SectionThree_card_container {
     /* */
-   
+
     gap: 30px;
-    margin:20px auto;
+    margin: 20px auto;
 }
-#SectionThree_card{
- 
+
+#SectionThree_card {
+
     gap: 30px;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     padding: 30px;
 }
 
-#specialPlace_card{
-  
+#specialPlace_card {
+
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -53,17 +57,20 @@
     text-align: start;
     border-radius: 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    
+
 }
-#specialPlace_card:hover{
+
+#specialPlace_card:hover {
     box-shadow: none;
 }
-#specialPlace_card s{
+
+#specialPlace_card s {
     color: gray;
     font-size: small;
 }
-#specialPlace_card button:hover{
-background-color: rgb(3, 178, 184);
+
+#specialPlace_card button:hover {
+    background-color: rgb(3, 178, 184);
 }
 
 
@@ -84,71 +91,111 @@ background-color: rgb(3, 178, 184);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s; /* Add a smooth transition effect */
+    transition: transform 0.5s;
+    /* Add a smooth transition effect */
 }
 
 .custom-grid-item:hover .grid-item-content img {
-    transform: scale(1.1); /* Adjust the scale factor for zoom level */
+    transform: scale(1.1);
+    /* Adjust the scale factor for zoom level */
 }
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-#section_five{
-   
+#section_five {
+
     width: 100%;
     margin: auto;
     margin-bottom: 40px;
     padding: 30px;
 }
 
-#about_box{
+#about_box {
     display: flex;
     /* */
 }
-#about_left{
+
+#about_left {
     width: 40%;
     padding: 25px;
 }
 
-#about_right{
-   width: 60%;
+#about_right {
+    width: 60%;
     text-align: start;
     padding: 20px;
 }
-#section_five span{
-   
-   color: orange;
+
+#section_five span {
+
+    color: orange;
 }
 
-@media  (max-width: 768px) {
-    #section_two_container{
-        grid-template-columns: repeat(1,1fr); 
-    
+@media (max-width: 767px) {
+    #section_two_container {
+        grid-template-columns: repeat(1, 1fr);
+
     }
-    #SectionThree_card{
-        grid-template-columns: repeat(1,1fr);
+
+    #SectionThree_card {
+        grid-template-columns: repeat(1, 1fr);
     }
-    #about_box{
+
+    #about_box {
         display: block;
         width: 100%;
-       
+
     }
-    #about_left{
+
+    #about_left {
         width: 100%;
-        padding: 10px; 
+        padding: 10px;
     }
-    
-    #about_right{
-       width: 100%;
+
+    #about_right {
+        width: 100%;
         text-align: start;
         padding: 10px;
     }
-    #section_five{
+
+    #section_five {
 
         padding: 10px;
     }
-    #sectionFour_grid{
+
+    #sectionFour_grid {
         display: grid;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-    
+
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    #section_two_container {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #SectionThree_card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #about_box {
+        display: block;
+        width: 100%;
+
+    }
+
+    #about_left {
+        width: 70%;
+        padding: 10px;
+        margin: auto;
+    }
+
+    #about_right {
+        width: 70%;
+        margin: auto;
+        text-align: start;
+        padding: 10px;
+    }
 }

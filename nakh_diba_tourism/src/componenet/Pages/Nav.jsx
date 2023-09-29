@@ -46,7 +46,7 @@ export const Nav = () => {
 
         {/* Desktop Links */}
         <Spacer />
-        <Flex justifyContent={'space-around'} alignItems={'center'} width={'40%'} display={{ base: 'none', md: 'flex' }}>
+        <Box justifyContent={'space-around'} id="nav_option" alignItems={'center'} width={['none','80%','55%']} display={{ base: 'none' }}>
           <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} ml={4} to="/">
             Home
           </Box>
@@ -79,7 +79,7 @@ export const Nav = () => {
               <Icon as={FaUser} mr={2} /> Login
             </Box>
           )}
-        </Flex>
+        </Box>
       </Flex>
 
       {/* Mobile Menu */}

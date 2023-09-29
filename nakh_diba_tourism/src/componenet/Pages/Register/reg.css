@@ -31,8 +31,9 @@
 }
 
 #homeButton {
-    position: relative;
+    position: fixed;
     top: 0;
+    left: 0;
 
     border: 1px solid;
 
@@ -54,17 +55,37 @@
     color: white;
 }
 
-@media (max-width:768px) {
+@media (max-width:767px) {
     #login_main {
-        width: 100%;
+        margin: 25% auto;
+        width: 90%;
     }
 
     #signup_main {
         width: 95%;
+        margin: 25% auto;
     }
 
     #forgot_main {
+        margin: 25% auto;
         width: 95%;
+
+    }
+}
+@media (min-width:768px) and (max-width:1023px) {
+    #login_main {
+        margin: 10% auto;
+        width: 60%;
+    }
+
+    #signup_main {
+        width: 60%;
+        margin: 10% auto;
+    }
+
+    #forgot_main {
+        margin: 10% auto;
+        width: 50%;
 
     }
 }
