@@ -38,7 +38,7 @@ export const FinalReceipt = () => {
             // filter="blur(5px)"
         >
 
-            <Heading w={'90%'} borderRadius={'10px'} m={'auto'} backgroundColor={'orange'}>Review Journey</Heading>
+            {/* <Heading w={'90%'} borderRadius={'10px'} m={'auto'} backgroundColor={'orange'}>Review Journey</Heading> */}
             <Box
                 boxShadow="sm"
                 borderRadius="lg"
@@ -48,7 +48,7 @@ export const FinalReceipt = () => {
                 id="form_final_reciept"
                 textAlign="left"
                 border="1px solid #ccc"
-                m=" 10px auto" display={'grid'} gap={'20px'}>
+                m=" auto" display={'grid'} gap={'20px'}>
                 <Box
 
                 >
