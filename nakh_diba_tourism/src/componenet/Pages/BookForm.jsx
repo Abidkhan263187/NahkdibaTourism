@@ -46,7 +46,7 @@ export const BookingCard = () => {
   };
 
   useEffect(() => {
-    const pack = JSON.parse(localStorage.getItem('package')) || '';
+    const pack = JSON.parse(sessionStorage.getItem('package')) || '';
     const hotelData = JSON.parse(localStorage.getItem('hotel')) || '';
     const city = JSON.parse(localStorage.getItem('city')) || '';
     setFormData({ ...formData, to: pack.location  ? pack.location : hotelData.placeName, from: city })

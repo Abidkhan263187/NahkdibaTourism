@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+  /* Apply a blur effect only to the background */
+
 #login_main {
     /* border: 1px solid orange ; */
     border-radius: 10px;

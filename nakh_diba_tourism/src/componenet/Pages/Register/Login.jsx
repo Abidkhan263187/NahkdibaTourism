@@ -77,7 +77,7 @@ export const Login = () => {
   };
 
   return (
-    <Box>
+    <Box >
       <Button size={'sm'} variant={'outline'}  id="homeButton" onClick={() => navigate('/')}><i class="fa-solid fa-house"></i></Button>
 
       <VStack spacing={4} align="stretch" id="login_main">

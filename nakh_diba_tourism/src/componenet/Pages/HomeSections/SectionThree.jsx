@@ -17,7 +17,7 @@ export const SpecialPlace_card = ({ icon, photo, location,reviews,price,mrp }) =
            price,
            mrp
         }
-        localStorage.setItem('package',JSON.stringify(Placeobj))
+        sessionStorage.setItem('package',JSON.stringify(Placeobj))
         localStorage.setItem('bookStyle',JSON.stringify('package'))
          localStorage.setItem('hotel',JSON.stringify(''))
         navigate('/book')

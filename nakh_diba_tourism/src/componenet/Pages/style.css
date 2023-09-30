@@ -44,7 +44,7 @@
 #log_person {
   padding: 2px 15px;
   position: absolute;
-  margin-top: 2%;
+  margin-top:6%;
   background-color: rgb(64, 64, 64);
   /* border: 1px solid; */
   color: rgb(242, 245, 242);
@@ -53,6 +53,19 @@
   font-weight: 700;
   margin-left: 10px;
 }
+#log_person2 {
+  padding: 2px 15px;
+  position: absolute;
+  margin-top:2%;
+  background-color: rgb(64, 64, 64);
+  /* border: 1px solid; */
+  color: rgb(242, 245, 242);
+  font-size: large;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
 
 #footer_main {
 
@@ -677,6 +690,10 @@
 background-color: #f4f4f4;
 }
 
+#form_final_reciept {
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the alpha value (0.9) for the desired level of transparency */
+}
+
 /* media queries >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 @media (max-width:767px) {
 
@@ -737,10 +754,17 @@ background-color: #f4f4f4;
   }
 
   #log_person {
-    margin-top: 30px;
+    margin-top: 80px;
+    font-size: medium;
+    margin-left: -30px;
 
   }
+  #log_person2 {
+    margin-top: 30px;
+    font-size: medium;
+   
 
+  }
   /* #continent_card_container{
     padding: 0;
   } */
@@ -1002,7 +1026,15 @@ background-color: #f4f4f4;
   }
 
   #log_person {
+    margin-top: 80px;
+    font-size: medium;
+    margin-left: -30px;
+
+  }
+  #log_person2 {
     margin-top: 30px;
+    font-size: medium;
+
 
   }
 

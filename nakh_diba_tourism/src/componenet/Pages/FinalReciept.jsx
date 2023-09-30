@@ -12,7 +12,7 @@ export const FinalReceipt = () => {
     useEffect(() => {
         try {
             const tripFormData = JSON.parse(localStorage.getItem('tripForm')) || "";
-            const packageData = JSON.parse(localStorage.getItem('package')) || "";
+            const packageData = JSON.parse(sessionStorage.getItem('package')) || "";
             const services = JSON.parse(localStorage.getItem('services')) || "";
             const hotel = JSON.parse(localStorage.getItem('hotel')) || "";
 
@@ -27,25 +27,32 @@ export const FinalReceipt = () => {
 
     const handleBookTrip = () => {
         localStorage.clear();
+        sessionStorage.removeItem('package')
         navigate('/success')
     }
 
     return (
-        <Box m={'auto'} backgroundImage={`url('https://coolwallpapers.me/picsup/3092593-action_architecture_blurred-background_building_car_city_defocused_evening_light_luggage_nostalgic_outdoors_pavement_reflection_street_summer_sunset_toy-car_travel_vehicle_water_yellow.jpg')`} >
-            <Heading w={'90%'}  borderRadius={'10px'} m={'auto'} backgroundColor={'orange'}>Review Journey</Heading>
+        <Box m={'auto'}
+            backgroundImage={`url('https://wallpaperaccess.com/full/185290.jpg')`}
+            backgroundRepeat="no-repeat"
+            // filter="blur(5px)"
+        >
+
+            <Heading w={'90%'} borderRadius={'10px'} m={'auto'} backgroundColor={'orange'}>Review Journey</Heading>
             <Box
                 boxShadow="sm"
                 borderRadius="lg"
                 p={6}
                 w={["90%", "80%", "60%", "50%"]}
-                background="white"
+                style={{ filter: 'none' }}
+                id="form_final_reciept"
                 textAlign="left"
                 border="1px solid #ccc"
                 m=" 10px auto" display={'grid'} gap={'20px'}>
                 <Box
 
                 >
-                    <Heading size="lg" border={'1px solid  orange'}  borderRadius={'10px'} textAlign={'center'} >
+                    <Heading size="lg" border={'1px solid  orange'} borderRadius={'10px'} textAlign={'center'} >
                         Travel  <span style={{ color: "orange" }}>Details</span>
                     </Heading>
                     {Object.keys(tripdata).length > 0 && (
@@ -77,13 +84,13 @@ export const FinalReceipt = () => {
                 {services !== '' && services.length > 0 && <Box
 
                 >
-                    <Heading textAlign={'center'} border={'1px solid  orange'}  borderRadius={'10px'} mb={'10px'} size="lg">
+                    <Heading textAlign={'center'} border={'1px solid  orange'} borderRadius={'10px'} mb={'10px'} size="lg">
                         Selected <span style={{ color: "orange" }}>Services</span>
                     </Heading>
                     {services.length > 0 && (
                         <ul >
                             {services.map((elem, index) => (
-                                <li style={{marginLeft:"20px"}}  key={index}>
+                                <li style={{ marginLeft: "20px" }} key={index}>
                                     <Text fontSize="xl">{elem}</Text>
                                 </li>
                             ))}
@@ -95,7 +102,7 @@ export const FinalReceipt = () => {
 
 
                 >
-                    <Heading textAlign={'center'} border={'1px solid  orange'}  borderRadius={'10px'} size="lg"  > Package <span style={{ color: "orange" }}>Details</span>    </Heading>
+                    <Heading textAlign={'center'} border={'1px solid  orange'} borderRadius={'10px'} size="lg"  > Package <span style={{ color: "orange" }}>Details</span>    </Heading>
                     {Object.keys(packageData).length > 0 && (
                         <Flex mt={'10px'} textAlign={'start'}>
                             <Image src={packageData.photo} w={'30%'} />

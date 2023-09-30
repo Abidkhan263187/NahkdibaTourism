@@ -20,6 +20,7 @@ export const Nav = () => {
     sessionStorage.removeItem('user');
     setUser(null);
     localStorage.clear()
+    sessionStorage.removeItem('package')
     window.location.href = "/login"
 
   };
@@ -29,7 +30,7 @@ export const Nav = () => {
       <Flex alignItems="center" id="navbar">
         <Heading display={'flex'} justifyContent={'center'} alignItems={'center'} size="md" color="black" fontWeight={'700'} as={Link} to={'/'}>
 
-          <Box> <Image src={img} w={'30px'} /></Box> &nbsp; Travelena {city && <Text id="log_person">  &nbsp;{city}</Text>}
+          <Box> <Image src={img} w={'30px'} /></Box> &nbsp;Travelena {city && <Text id="log_person"> <i style={{color:"orange"}} class="fa-solid fa-location-dot"></i>  &nbsp;{city}</Text>}
         </Heading>
 
         {/* Mobile Menu Button */}
@@ -68,7 +69,7 @@ export const Nav = () => {
               <Button variant="link" color='white' onClick={handleLogout}>
                 <Icon as={FaSignOutAlt} ml={2} /> Logout
               </Button>
-              <Box id="log_person">
+              <Box id="log_person2">
                 {user}
               </Box>
             </VStack>
@@ -106,7 +107,7 @@ export const Nav = () => {
               <Button variant="link" color='white' onClick={handleLogout}>
                 <Icon as={FaSignOutAlt} ml={2} /> Logout
               </Button>
-              <Box id="log_person">
+              <Box id="log_person2">
                 {user}
               </Box>
             </VStack>
