@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Heading, Image, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Grid, Heading, Image, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,22 +31,25 @@ export const FinalReceipt = () => {
     }
 
     return (
-        <Box w={["90%" ,"80%", "60%", "50%"]} m={'auto'} >
-            <Heading>Review Journey</Heading>
-            <Box  m=" 20px auto" display={'grid'} gap={'20px'}>
+        <Box m={'auto'} backgroundImage={`url('https://coolwallpapers.me/picsup/3092593-action_architecture_blurred-background_building_car_city_defocused_evening_light_luggage_nostalgic_outdoors_pavement_reflection_street_summer_sunset_toy-car_travel_vehicle_water_yellow.jpg')`} >
+            <Heading w={'90%'}  borderRadius={'10px'} m={'auto'} backgroundColor={'orange'}>Review Journey</Heading>
+            <Box
+                boxShadow="sm"
+                borderRadius="lg"
+                p={6}
+                w={["90%", "80%", "60%", "50%"]}
+                background="white"
+                textAlign="left"
+                border="1px solid #ccc"
+                m=" 10px auto" display={'grid'} gap={'20px'}>
                 <Box
-                    boxShadow="md"
-                    borderRadius="lg"
-                    p={6}
-                    background="white"
-                    textAlign="left"
-                    border="1px solid #ccc"
+
                 >
-                    <Heading size="lg" mb={4} textAlign={'center'}>
-                        Travel  <span style={{color:"orange"}}>Details</span> 
+                    <Heading size="lg" border={'1px solid  orange'}  borderRadius={'10px'} textAlign={'center'} >
+                        Travel  <span style={{ color: "orange" }}>Details</span>
                     </Heading>
                     {Object.keys(tripdata).length > 0 && (
-                        <Box mt={'40px'}>
+                        <Box mt={'10px'}>
                             <Text fontSize="xl">
                                 <strong>Journey Start From:</strong> {tripdata.from}
                             </Text>
@@ -71,49 +74,41 @@ export const FinalReceipt = () => {
                     )}
                 </Box>
 
-                {services !== '' && services.length> 0 && <Box
-                    boxShadow="md"
-                    borderRadius="lg"
-                    p={6}
-                    background="white"
-                    textAlign="left"
-                    border="1px solid #ccc"
+                {services !== '' && services.length > 0 && <Box
+
                 >
-                    <Heading size="lg" mb={4} textAlign={'center'}>
-                        Selected <span style={{color:"orange"}}>Services</span>  
+                    <Heading textAlign={'center'} border={'1px solid  orange'}  borderRadius={'10px'} mb={'10px'} size="lg">
+                        Selected <span style={{ color: "orange" }}>Services</span>
                     </Heading>
                     {services.length > 0 && (
-                        <ul mt={'40px'}>
+                        <ul >
                             {services.map((elem, index) => (
-                                <Text key={index}>
+                                <li style={{marginLeft:"20px"}}  key={index}>
                                     <Text fontSize="xl">{elem}</Text>
-                                </Text>
+                                </li>
                             ))}
                         </ul>
                     )}
                 </Box>}
 
                 {packageData !== '' && <Box
-                   
-                    boxShadow="sm"
-                    borderRadius="lg"
-                    p={6}
-                    background="white"
-                    textAlign="left"
-                    border="1px solid #ccc"
-                >
-                    <Heading size="lg" mb={4} textAlign={'center'}> Package <span style={{color:"orange"}}>Details</span>    </Heading>
-                    {Object.keys(packageData).length > 0 && (
-                        <Box mt={'40px'}>
-                            <Image src={packageData.photo} m="auto" mb={4} />
-                            <Text fontSize="xl">
-                                <strong>Location:</strong> {packageData.location}
-                            </Text>
-                            <Text fontSize="xl">
-                                <strong>Price:</strong> {packageData.price}
-                            </Text>
 
-                        </Box>
+
+                >
+                    <Heading textAlign={'center'} border={'1px solid  orange'}  borderRadius={'10px'} size="lg"  > Package <span style={{ color: "orange" }}>Details</span>    </Heading>
+                    {Object.keys(packageData).length > 0 && (
+                        <Flex mt={'10px'} textAlign={'start'}>
+                            <Image src={packageData.photo} w={'30%'} />
+                            &nbsp;&nbsp;&nbsp;  <Box  >
+                                <Text fontSize="xl">
+                                    <strong>Location:</strong> {packageData.location}
+                                </Text>
+                                <Text fontSize="xl">
+                                    <strong>Price:</strong> {packageData.price}
+                                </Text>
+                            </Box>
+
+                        </Flex>
                     )}
                 </Box>}
                 {hotelData && <Box
@@ -124,10 +119,10 @@ export const FinalReceipt = () => {
                     textAlign="left"
                     border="1px solid #ccc"
                 >
-                    <Heading textAlign={'center'} >Hotel  <span style={{color:"orange"}}>Details</span>  </Heading>
+                    <Heading  >Hotel  <span style={{ color: "orange" }}>Details</span>  </Heading>
                     {Object.keys(hotelData).length > 0 && (
                         <Box mt={'40px'}>
-                            <Image src={hotelData.Image} maxW="100%"  mb={4} />
+                            <Image src={hotelData.Image} maxW="100%" mb={4} />
                             <Text>  <strong>Hotel Name : </strong>{hotelData.HotelName}</Text>
                             <Text> <strong>City Name : </strong>{hotelData.placeName}</Text>
                             <Text> <strong>Room Rent : </strong>{hotelData.PriceRange}</Text>
@@ -136,7 +131,7 @@ export const FinalReceipt = () => {
                     )}
                 </Box>}
             </Box>
-            <Button m={'20px auto'} w={'40%'} colorScheme="orange" mt={4} onClick={handleBookTrip}>
+            <Button m={'20px auto'} w={'50%'} colorScheme="orange" mt={4} onClick={handleBookTrip}>
                 Book trip!
             </Button></Box>
     );

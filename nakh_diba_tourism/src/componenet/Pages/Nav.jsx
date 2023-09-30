@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Flex, Spacer, Heading, Button, useDisclosure, Icon, VStack, Text } from '@chakra-ui/react';
+import { Box, Flex, Spacer, Heading, Button, useDisclosure, Icon, VStack, Text, Image } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaToriiGate, FaUser, FaSignOutAlt } from 'react-icons/fa'; // Import the icons
 import { useSelector } from 'react-redux';
-
+import img from '../image/plane.png'
 
 export const Nav = () => {
 
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {city}=useSelector((store)=>store)
+  const { city } = useSelector((store) => store)
   useEffect(() => {
     const userData = JSON.parse(sessionStorage.getItem('user'));
     setUser(userData);
@@ -27,9 +27,9 @@ export const Nav = () => {
   return (
     <Box bg="transparent" variant={'outline'} >
       <Flex alignItems="center" id="navbar">
-        <Heading size="md" color="black" fontWeight={'700'} as={Link} to={'/'}>
-          <Icon as={FaToriiGate} style={{ color: 'blue' }} /> Travelena
-        { city &&<Text id="log_person"> <i style={{color:"orange"}} className="fa-solid fa-location-dot"></i>&nbsp;{city}</Text>}  
+        <Heading display={'flex'} justifyContent={'center'} alignItems={'center'} size="md" color="black" fontWeight={'700'} as={Link} to={'/'}>
+
+          <Box> <Image src={img} w={'30px'} /></Box> &nbsp; Travelena {city && <Text id="log_person">  &nbsp;{city}</Text>}
         </Heading>
 
         {/* Mobile Menu Button */}
@@ -46,7 +46,7 @@ export const Nav = () => {
 
         {/* Desktop Links */}
         <Spacer />
-        <Box justifyContent={'space-around'} id="nav_option" alignItems={'center'} width={['none','80%','55%']} display={{ base: 'none' }}>
+        <Box justifyContent={'space-around'} id="nav_option" alignItems={'center'} width={['none', '80%', '55%']} display={{ base: 'none' }}>
           <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} ml={4} to="/">
             Home
           </Box>
@@ -63,9 +63,8 @@ export const Nav = () => {
             Contact
           </Box>
           {user ? (
-           
-            <VStack overflow={'auto'} alignItems="center">
 
+            <VStack overflow={'auto'} alignItems="center">
               <Button variant="link" color='white' onClick={handleLogout}>
                 <Icon as={FaSignOutAlt} ml={2} /> Logout
               </Button>
@@ -74,7 +73,7 @@ export const Nav = () => {
               </Box>
             </VStack>
           ) : (
-           
+
             <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'800'} ml={4} to="/login">
               <Icon as={FaUser} mr={2} /> Login
             </Box>
@@ -85,23 +84,23 @@ export const Nav = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <Box id="mob_nav" mt={4}>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/">
             Home
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/packages">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/packages">
             Packages
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/overview">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/overview">
             News
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/book">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/book">
             Book
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'}  to="/contact">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/contact">
             Contact
           </Box>
           {user ? (
-           
+
             <VStack overflow={'auto'} alignItems="center">
 
               <Button variant="link" color='white' onClick={handleLogout}>
@@ -112,7 +111,7 @@ export const Nav = () => {
               </Box>
             </VStack>
           ) : (
-           
+
             <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'800'} ml={4} to="/login">
               <Icon as={FaUser} mr={2} /> Login
             </Box>

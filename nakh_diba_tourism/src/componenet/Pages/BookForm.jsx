@@ -41,11 +41,7 @@ export const BookingCard = () => {
   };
 
   const handleSubmit = () => {
-    // e.preventDefault();
-    // You can handle form submission here
-    console.log('Form submitted');
     localStorage.setItem('tripForm', JSON.stringify(formData));
-    console.log(formData);
     navigate('/reciept')
   };
 
