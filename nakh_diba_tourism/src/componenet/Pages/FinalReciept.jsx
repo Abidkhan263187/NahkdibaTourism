@@ -98,10 +98,7 @@ export const FinalReceipt = () => {
                     )}
                 </Box>}
 
-                {packageData !== '' && <Box
-
-
-                >
+                {packageData !== '' && <Box >
                     <Heading textAlign={'center'} border={'1px solid  orange'} borderRadius={'10px'} size="lg"  > Package <span style={{ color: "orange" }}>Details</span>    </Heading>
                     {Object.keys(packageData).length > 0 && (
                         <Flex mt={'10px'} textAlign={'start'}>

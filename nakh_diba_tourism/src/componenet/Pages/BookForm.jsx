@@ -164,8 +164,7 @@ export const BookingCard = () => {
                 {packageData.location}
               </Text>
               <Text>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-                reiciendis!
+               {packageData.desc}
               </Text>
               <HStack>
                 <Text>

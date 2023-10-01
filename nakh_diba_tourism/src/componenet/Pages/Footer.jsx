@@ -9,10 +9,10 @@ export const Footer = () => {
             <Box id="footer_fst">
                 <Box>
                     <Heading size="md" mb={'10px'}>About Us</Heading>
-                    <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, ex.</Text>
+                    <Text>Welcome to Travelena, where our passion for travel and
+                        commitment to unforgettable experiences come together.
+                        Explore the world with us and let's make your travel dreams a reality</Text>
                 </Box>
-
-
 
                 <Box>
                     <Heading id="footer_haed" size="md" mb={'10px'}>Branch Locations</Heading>
