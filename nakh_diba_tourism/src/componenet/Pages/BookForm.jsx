@@ -182,7 +182,7 @@ export const BookingCard = () => {
                 </Text>
               </HStack>
               <HStack>
-                <Text fontWeight={'600'}>{packageData.price}</Text>
+                <Text fontWeight={'600'}>${packageData.price}</Text>
                 <s>${packageData.mrp}</s>
               </HStack>
             </Box>
