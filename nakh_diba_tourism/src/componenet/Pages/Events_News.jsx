@@ -48,7 +48,7 @@ export const Events_News = () => {
   return (
     <Box>
 
-      <Heading mt={"60px"}>News And <span style={{ color: "orange" }}> Events</span></Heading>
+      <Heading mt={"60px"}>News And <span style={{ color: " #037dab" }}> Events</span></Heading>
       <Box id="events_news_main">
 
         {Events_news.map((elem, ind) => {
@@ -58,7 +58,7 @@ export const Events_News = () => {
                 <Image src={elem.image} />
               </Box>
               <Box id="new_details">
-                <Text fontWeight={'700'} color={'orange'} fontSize={'lg'}>{elem.info}</Text>
+                <Text fontWeight={'700'} color={' #037dab'} fontSize={'lg'}>{elem.info}</Text>
                 <strong>{elem.headline}</strong>
                 <Text color={'gray'} >{elem.details}</Text>
               </Box>

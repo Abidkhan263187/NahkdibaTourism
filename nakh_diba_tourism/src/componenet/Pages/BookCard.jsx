@@ -7,7 +7,7 @@ export const BookCard = ({img}) => {
     <Box>
         {/* <Nav/> */}
         <Box id="book_container_main">
-      <Heading>Book <span style={{ color: "orange" }}>Now !</span></Heading>
+      <Heading>Book <span style={{ color: " #037dab" }}>Now !</span></Heading>
       <Box id="book_container">
         <Box id="book_container_left">
           <Image src={img} />

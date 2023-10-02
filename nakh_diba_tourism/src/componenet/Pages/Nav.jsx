@@ -13,8 +13,7 @@ export const Nav = () => {
   useEffect(() => {
     const userData = JSON.parse(sessionStorage.getItem('user'));
     setUser(userData);
-
-  }, []);
+  }, [user]);
 
   const handleLogout = () => {
     sessionStorage.removeItem('user');
@@ -28,9 +27,9 @@ export const Nav = () => {
   return (
     <Box bg="transparent" variant={'outline'} >
       <Flex alignItems="center" id="navbar">
-        <Heading display={'flex'} justifyContent={'center'} alignItems={'center'} size="md" color="black" fontWeight={'700'} as={Link} to={'/'}>
+        <Heading display={'flex'} justifyContent={'center'} alignItems={'center'} size="md" color="white" fontWeight={'600'} as={Link} to={'/'}>
 
-          <Box> <Image src={img} w={'30px'} /></Box> &nbsp;Travelena {city && <Text id="log_person"> <i style={{color:"orange"}} class="fa-solid fa-location-dot"></i>  &nbsp;{city}</Text>}
+          <Box> <Image src={img} w={'30px'} /></Box> &nbsp;&nbsp;Travelena {city && <Text id="log_person"> <i style={{ color: "orange" }} class="fa-solid fa-location-dot"></i>  &nbsp;{city}</Text>}
         </Heading>
 
         {/* Mobile Menu Button */}
@@ -40,7 +39,8 @@ export const Nav = () => {
           ml={3}
           id='mob_menue_nav'
           variant="outline"
-          colorScheme="white"
+          backgroundColor="#03698e"
+          color={'white'}
         >
           Menu
         </Button>
@@ -48,25 +48,25 @@ export const Nav = () => {
         {/* Desktop Links */}
         <Spacer />
         <Box justifyContent={'space-around'} id="nav_option" alignItems={'center'} width={['none', '80%', '55%']} display={{ base: 'none' }}>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} ml={4} to="/">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} ml={4} to="/">
             Home
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} ml={4} to="/packages">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} ml={4} to="/packages">
             Packages
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} ml={4} to="/overview">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} ml={4} to="/overview">
             News
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} ml={4} to="/book">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} ml={4} to="/book">
             Book
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} ml={4} to="/contact">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} ml={4} to="/contact">
             Contact
           </Box>
-          {user ? (
+          {user && user !== '' ? (
 
             <VStack overflow={'auto'} alignItems="center">
-              <Button variant="link" color='white' onClick={handleLogout}>
+              <Button variant="link" fontWeight={'600'} color='white' onClick={handleLogout}>
                 <Icon as={FaSignOutAlt} ml={2} /> Logout
               </Button>
               <Box id="log_person2">
@@ -75,7 +75,7 @@ export const Nav = () => {
             </VStack>
           ) : (
 
-            <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'800'} ml={4} to="/login">
+            <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} ml={4} to="/login">
               <Icon as={FaUser} mr={2} /> Login
             </Box>
           )}
@@ -85,26 +85,26 @@ export const Nav = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <Box id="mob_nav" mt={4}>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} to="/">
             Home
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/packages">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} to="/packages">
             Packages
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/overview">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} to="/overview">
             News
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/book">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} to="/book">
             Book
           </Box>
-          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'700'} to="/contact">
+          <Box as={Link} id="nav_li" color="black" fontSize={'large'} fontWeight={'600'} to="/contact">
             Contact
           </Box>
           {user ? (
 
             <VStack overflow={'auto'} alignItems="center">
 
-              <Button variant="link" color='white' onClick={handleLogout}>
+              <Button variant="link" id="nav_li" color='white' onClick={handleLogout}>
                 <Icon as={FaSignOutAlt} ml={2} /> Logout
               </Button>
               <Box id="log_person2">

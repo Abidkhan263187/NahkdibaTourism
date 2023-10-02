@@ -52,7 +52,7 @@ function ReviewBox() {
         <Icon
           key={i}
           as={FaStar}
-          color={i <= formData.rating ? 'orange.500' : 'gray.300'}
+          color={i <= formData.rating ? '#037dab' : 'gray.300'}
           cursor="pointer"
           onClick={() => handleRatingChange(i)}
         />
@@ -104,7 +104,7 @@ function ReviewBox() {
           <FormLabel>Rating</FormLabel>
           <Flex alignItems="center">{renderStars()}</Flex>
         </FormControl>
-        <Button mt={4} colorScheme="orange" type="submit">
+        <Button mt={4} color={'white'} backgroundColor="#037dab" type="submit">
           Submit Feedback
         </Button>
       </form>

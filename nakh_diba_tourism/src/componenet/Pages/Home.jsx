@@ -76,13 +76,13 @@ export const Home = () => {
           <Text fontSize={['2xl', '3xl', '4xl']} color="gray.100" mb={4}>
             Explore the World!
           </Text>
-          <Button w={'30%'} colorScheme='orange' onClick={() => navigate('/allcontinent')}>Plan Trip!</Button>
+          <Button w={'30%'} backgroundColor=' #037dab' color={'white'} onClick={() => navigate('/allcontinent')}>Plan Trip!</Button>
         </Box>
       </Center>
     </Box>
       <Box>
         {/* <SectionOne /> */}
-        {/* <Heading mt={'7%'}> Book <span style={{ color: 'orange' }}>Your Trip!</span> </Heading> */}
+        {/* <Heading mt={'7%'}> Book <span style={{ color: ' #037dab' }}>Your Trip!</span> </Heading> */}
         {/* <BookingCard /> */}
         {/* <FamousPlaces city={city}/> */}
       </Box>
@@ -90,7 +90,7 @@ export const Home = () => {
         <SectionTwo_home />
       </Box>
       <Box>
-        <Heading> Special <span style={{ color: "orange" }}>Offer</span></Heading>
+        <Heading> Special <span style={{ color: " #037dab" }}>Offer</span></Heading>
         <SectionThree />
       </Box>
       <Box>

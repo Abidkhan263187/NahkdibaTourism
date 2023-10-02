@@ -88,7 +88,7 @@ export const Service = () => {
 
   return (
     <>
-      <Heading mt={'50px'}>Add Extra <span style={{ color: "orange" }}>Services</span></Heading>
+      <Heading mt={'50px'}>Add Extra <span style={{ color: "#037dab" }}>Services</span></Heading>
       <Grid id="extraService_main">
         {services.map((service, index) => (
           <ServiceBox key={index} icon={service.icon} title={service.title} description={service.description}

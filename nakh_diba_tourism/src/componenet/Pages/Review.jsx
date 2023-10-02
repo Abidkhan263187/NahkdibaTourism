@@ -45,7 +45,7 @@ export const responsive = {
               .map((_, i) => (
                 <StarIcon
                   key={i}
-                  color={i < 4 ? 'orange' : 'gray.300'}
+                  color={i < 4 ? '#037dab' : 'gray.300'}
                 />
               ))}
           </Text>

@@ -115,7 +115,7 @@ export const SignUp = () => {
   return (
     <Box>
       <VStack spacing={4} align="stretch" id="signup_main">
-        <Heading w={'100%'} color="orange.400" border={'none'} variant={'outline'} size={'lg'}>
+        <Heading w={'100%'} color=" #037dab" border={'none'} variant={'outline'} size={'lg'}>
           SignUp Form
         </Heading>
         <form onSubmit={handleSubmit}>
@@ -205,7 +205,7 @@ export const SignUp = () => {
               <Link to="/login">Login</Link>
             </span>
           </Text>
-          <Button isDisabled={!isValidEmail || !!passwordError} mt={'10px'} w={'100%'} type="submit" colorScheme="orange">
+          <Button isDisabled={!isValidEmail || !!passwordError} mt={'10px'} w={'100%'} type="submit" color={'white'} backgroundColor=" #037dab">
             Sign Up
           </Button>
         </form>

@@ -16,7 +16,7 @@ export const SectionFive = () => {
                         your travel dreams into reality.Travel agencies are your one-stop shop for all things travel;
                         they handle everything from flights and accommodations to tours and activities, ensuring a
                         hassle-free experience</Text>
-                    <Button mt={'15px'} size={'md'} colorScheme='orange' variant='outline'> Read more</Button>
+                    <Button mt={'15px'} size={'md'} color={'white'} backgroundColor=' #037dab' variant='outline'> Read more</Button>
                 </Box>
             </Box>
         </Box>

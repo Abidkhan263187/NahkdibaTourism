@@ -22,7 +22,7 @@ export const Booking = () => {
         <Nav/>
         <BookForm />
         <Service/>
-        <Heading mt={'10%'} size={'lg'}>Make Your  <span style={{color:"orange"}}>Trip  Full Of Enjoy!</span>  With Awesome <span style={{color:"orange"}}>Packages</span> </Heading>
+        <Heading mt={'10%'} size={'lg'}>Make Your  <span style={{color:"#037dab"}}>Trip  Full Of Enjoy!</span>  With Awesome <span style={{color:"#037dab"}}>Packages</span> </Heading>
         <SectionThree/>
         <Review/>
         <ReviewBox/>

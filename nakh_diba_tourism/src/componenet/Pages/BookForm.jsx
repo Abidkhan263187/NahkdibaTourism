@@ -143,7 +143,7 @@ export const BookingCard = () => {
                 </Select>
               </FormControl>
             </HStack>
-            <Button colorScheme="orange" w={'80%'} type='submit'  >
+            <Button backgroundColor=' #037dab' color={'white'} w={'80%'} type='submit'  >
               Submit
             </Button>
           </VStack>
@@ -158,7 +158,7 @@ export const BookingCard = () => {
               </Box>
               <Text mt={'20px'} size={'md'} fontWeight={'600'}>
                 <i
-                  style={{ color: 'orange', marginRight: '5px' }}
+                  style={{ color: ' #037dab', marginRight: '5px' }}
                   className="fa-solid fa-location-dot fa-lg"
                 ></i>{' '}
                 {packageData.location}
@@ -188,7 +188,7 @@ export const BookingCard = () => {
             </Box>
           )}
         </Box>) : (<Box id='book_right'>
-          <Button as={Link} to={'/packages'} colorScheme='orange'>Select Package</Button>
+          <Button as={Link} to={'/packages'} backgroundColor=' #037dab' color={'white'}>Select Package</Button>
         </Box>)}
       </Box>) : (<Box id='book_right'>
         {hotelObj ? (<Box >
@@ -216,7 +216,7 @@ export const BookingCard = () => {
                 <Box display='flex' mt='2' alignItems='center'>
                   {Array(5).fill('').map((_, i) => (
                     <StarIcon key={i}
-                      color={i < hotelObj.Rating ? 'orange.500' : 'gray.300'} />
+                      color={i < hotelObj.Rating ? '  #037dab' : 'gray.300'} />
                   ))}
                   <Box as='span' ml='2' color='gray.500' fontSize='sm'>
                     {hotelObj.Review} reviews
@@ -227,7 +227,7 @@ export const BookingCard = () => {
             </Box>
           )}
         </Box>) : (<Box id='book_right'>
-          <Button as={Link} to={'/packages'} colorScheme='orange'>Select Hotel </Button>
+          <Button as={Link} to={'/packages'} backgroundColor=' #037dab' color={'white'}>Select Hotel </Button>
         </Box>)}
       </Box>)}
 
@@ -247,7 +247,7 @@ function BookForm() {
         borderRadius="lg"
       />
       <Heading mt={'7%'}>
-        Book <span style={{ color: 'orange' }}>Your Trip!</span>
+        Book <span style={{ color: ' #037dab' }}>Your Trip!</span>
       </Heading>
       <BookingCard />
     </Box>

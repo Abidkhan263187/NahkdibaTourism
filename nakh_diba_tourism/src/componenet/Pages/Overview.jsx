@@ -10,7 +10,7 @@ export const Overview = () => {
     <div>
         <Nav/>
         <Events_News/>
-        <Heading>Explore And <span style={{color:"orange"}}> Book Package</span></Heading>
+        <Heading>Explore And <span style={{color:" #037dab"}}> Book Package</span></Heading>
         <SectionThree/>
         <Footer/>
     </div>

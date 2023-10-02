@@ -82,7 +82,7 @@ export const Login = () => {
 
       <VStack spacing={4} align="stretch" id="login_main">
         <FormControl isInvalid={isFormSubmitted && !isFormValid}>
-          <Heading w={'100%'} color='orange.400' border={'none'} variant={'outline'} size={'lg'}>Login Form</Heading>
+          <Heading w={'100%'} color=' #037dab' border={'none'} variant={'outline'} size={'lg'}>Login Form</Heading>
           <FormControl isInvalid={!isValidEmail} >
             <FormLabel>Email</FormLabel>
             <Input
@@ -127,10 +127,10 @@ export const Login = () => {
           <Text fontSize={["sm",""]} id="create_acc" color={'red.500'} as={Link} to="/forgotPassword">forgot password ?</Text>
         </Flex>
 
-        <Button colorScheme="orange" onClick={handleClick} isDisabled={!isFormValid}>
+        <Button backgroundColor=" #037dab" color={'white'} onClick={handleClick} isDisabled={!isFormValid}>
           Login
         </Button>
-        <Text id="create_acc" color={"blue"} textDecoration={'underline'} as={Link} to={'/signup'}>Create A New Account</Text>
+        <Text id="create_acc" color={"blue"} textDecoration={'underline'}  as={Link} to={'/signup'}>Create A New Account</Text>
         <Box m={"auto"}>
           <GoogleLoginButton />
         </Box>

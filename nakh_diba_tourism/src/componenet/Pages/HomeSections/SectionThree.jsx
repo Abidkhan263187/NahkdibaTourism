@@ -49,7 +49,7 @@ export const SpecialPlace_card = ({ icon, photo, location,reviews,price,mrp,desc
                 <Text fontWeight={'600'}>${price}</Text>
                 <s>${mrp}</s>
             </HStack>
-            <Button fontWeight={'600'} bottom={0} fontSize={"lg"} bgColor={'orange'} color={'white'} onClick={()=>handleBook(photo, location,reviews,price,mrp,desc)} >Book</Button>
+            <Button fontWeight={'600'} bottom={0} fontSize={"lg"} bgColor={' #037dab'} color={'white'} onClick={()=>handleBook(photo, location,reviews,price,mrp,desc)} >Book</Button>
         </Box>
     )
 }
@@ -65,7 +65,7 @@ export const SectionThree = () => {
   mrp="1,45,698"
   photo="https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900"
   icon="fa-solid fa-location-dot fa-lg"
-  desc="Experience the timeless allure of Paris, where the Eiffel Tower stands as a symbol of romance and dreams."
+  desc="Experience the timeless allure of Paris, where the Eiffel Tower stands as a symbol of romance."
 />
 
 <SpecialPlace_card

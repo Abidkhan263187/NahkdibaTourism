@@ -27,7 +27,7 @@ function ContactPage() {
     <Box>
       <Nav />
       <Box p={4} maxW="600px" mx="auto" mt="50px" mb="50px">
-        <Heading>Contact <span style={{color:"orange"}}>Us</span> </Heading>
+        <Heading>Contact <span style={{color:"#037dab"}}>Us</span> </Heading>
         <Text mt={4} fontSize="lg">
           We'd love to hear from you. Send us a message, and we'll get back to you as soon as possible.
         </Text>
@@ -44,18 +44,18 @@ function ContactPage() {
             <FormLabel>Message</FormLabel>
             <Textarea placeholder="Your Message" />
           </FormControl>
-          <Button mt={4} colorScheme="orange" type="submit">
+          <Button mt={4} w={'100%'} color={'white'} backgroundColor="#037dab" type="submit">
             Send Message
           </Button>
         </form>
-        <Box mt={8} border={'1px solid orange '} borderRadius={'10px'} padding={"20px 10px"}>
+        <Box mt={8} border={'1px solid #037dab '} borderRadius={'10px'} padding={"20px 10px"}>
           <Text fontWeight="bold">Contact Information:</Text>
           <Flex mt={2} margin={"auto"} w={'max-content'} >
-            <Icon as={FaPhone}  style={{color:"orange"}} boxSize={5} mr={2} />
+            <Icon as={FaPhone}  style={{color:"#037dab"}} boxSize={5} mr={2} />
             <Text textAlign="center" >Phone: +91-62-8000-7521</Text>
           </Flex>
           <Flex  margin={"auto"} w={'max-content'} mt={2} align="center">
-            <Icon as={FaEnvelope} style={{color:"orange"}} boxSize={5} mr={2} />
+            <Icon as={FaEnvelope} style={{color:"#037dab"}} boxSize={5} mr={2} />
             <Text>Email: abidkhan263187@gmail.com</Text>
           </Flex>
           <Text mt={4} fontWeight="bold">Follow Us:</Text>

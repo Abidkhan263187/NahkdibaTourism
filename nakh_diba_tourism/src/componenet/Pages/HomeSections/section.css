@@ -13,7 +13,7 @@
 }
 
 #service_card {
-    border: 1px solid orange;
+    border: 1px solid #037dab;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -28,7 +28,7 @@
 
 #service_font {
     font-size: 25px;
-    color: orange;
+    color: #037dab;
 
 }
 
@@ -129,7 +129,7 @@
 
 #section_five span {
 
-    color: orange;
+    color: #037dab;
 }
 
 @media (max-width: 767px) {
