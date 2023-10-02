@@ -52,8 +52,8 @@ export const FinalReceipt = () => {
                 <Box
 
                 >
-                    <Heading size="lg" border={'1px solid  orange'} borderRadius={'10px'} textAlign={'center'} >
-                        Travel  <span style={{ color: "orange" }}>Details</span>
+                    <Heading size="lg" border={'1px solid  #037dab'} borderRadius={'10px'} textAlign={'center'} >
+                        Travel  <span style={{ color: "#037dab" }}>Details</span>
                     </Heading>
                     {Object.keys(tripdata).length > 0 && (
                         <Box mt={'10px'}>
@@ -84,8 +84,8 @@ export const FinalReceipt = () => {
                 {services !== '' && services.length > 0 && <Box
 
                 >
-                    <Heading textAlign={'center'} border={'1px solid  orange'} borderRadius={'10px'} mb={'10px'} size="lg">
-                        Selected <span style={{ color: "orange" }}>Services</span>
+                    <Heading textAlign={'center'} border={'1px solid  #037dab'} borderRadius={'10px'} mb={'10px'} size="lg">
+                        Selected <span style={{ color: "#037dab" }}>Services</span>
                     </Heading>
                     {services.length > 0 && (
                         <ul >
@@ -99,7 +99,7 @@ export const FinalReceipt = () => {
                 </Box>}
 
                 {packageData !== '' && <Box >
-                    <Heading textAlign={'center'} border={'1px solid  orange'} borderRadius={'10px'} size="lg"  > Package <span style={{ color: "orange" }}>Details</span>    </Heading>
+                    <Heading textAlign={'center'} border={'1px solid  #037dab'} borderRadius={'10px'} size="lg"  > Package <span style={{ color: "#037dab" }}>Details</span>    </Heading>
                     {Object.keys(packageData).length > 0 && (
                         <Flex mt={'10px'} textAlign={'start'}>
                             <Image src={packageData.photo} w={'30%'} />
@@ -118,24 +118,24 @@ export const FinalReceipt = () => {
                 {hotelData && <Box
                     boxShadow="sm"
                     borderRadius="lg"
-                    p={6}
-                    background="white"
+                   
                     textAlign="left"
+                    backgroundColor={'transparent'}
                     border="1px solid #ccc"
                 >
-                    <Heading  >Hotel  <span style={{ color: "orange" }}>Details</span>  </Heading>
+                    <Heading textAlign={'center'} border={'1px solid  #037dab'} borderRadius={'10px'} size="lg" >Hotel  <span style={{ color: "#037dab" }}>Details</span>  </Heading>
                     {Object.keys(hotelData).length > 0 && (
                         <Box mt={'40px'}>
                             <Image src={hotelData.Image} maxW="100%" mb={4} />
                             <Text>  <strong>Hotel Name : </strong>{hotelData.HotelName}</Text>
                             <Text> <strong>City Name : </strong>{hotelData.placeName}</Text>
-                            <Text> <strong>Room Rent : </strong>{hotelData.PriceRange}</Text>
+                            <Text> <strong>Room Rent : </strong>${hotelData.PriceRange}</Text>
                             <Text> <strong>Reviews : </strong>{hotelData.Review}</Text>
                         </Box>
                     )}
                 </Box>}
             </Box>
-            <Button m={'20px auto'} w={'50%'} colorScheme="orange" mt={4} onClick={handleBookTrip}>
+            <Button m={'20px auto'} w={'50%'} bgColor="#037dab" color={'white'} mt={4} onClick={handleBookTrip}>
                 Book trip!
             </Button></Box>
     );
