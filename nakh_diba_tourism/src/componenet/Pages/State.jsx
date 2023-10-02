@@ -94,7 +94,7 @@ export const State = () => {
         {loading ? (
           <Skeleton height="40px" width="80%" my="10px" mx="auto" />
         ) : (
-          <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={"orange"}>{country}</Heading>
+          <Heading w={'95%'} m={'auto'} borderRadius={'5px'}  color={'white'} backgroundColor={" #037dab"}>{country}</Heading>
         )}
         <Box id="state_container">
           {loading ? (
@@ -108,9 +108,9 @@ export const State = () => {
                 <Box className="card_container" key={ind}>
                   <Box className="card-image" as='img' src={elem.stateImage}></Box>
                   <Box className="card-overlay">
-                    <h3 className="card-title" style={{ fontWeight: "700", color: "orange" }}>{elem.StateName}</h3>
+                    <h3 className="card-title" style={{ fontWeight: "700", color: " #037dab" }}>{elem.StateName}</h3>
                     <p className="card-description">Explore the  famous places</p>
-                    <Link to={`/${region}/${country}/${elem.StateName}`}> <Button colorScheme={'orange'} color={'white'} mt="10px" size="sm">See places</Button></Link>
+                    <Link to={`/${region}/${country}/${elem.StateName}`}> <Button backgroundColor={' #037dab'} color={'white'} mt="10px" size="sm">See places</Button></Link>
                   </Box>
                 </Box>
               )
@@ -120,7 +120,7 @@ export const State = () => {
       </Box>
       <Box>
         <Box>
-          <Heading >News And <span style={{ color: "orange" }}> Events</span></Heading>
+          <Heading >News And <span style={{ color: " #037dab" }}> Events</span></Heading>
           <Box id="events_news_main">
             {Events_News.map((elem, ind) => {
               return (
@@ -129,7 +129,7 @@ export const State = () => {
                     <Image src={elem.image} />
                   </Box>
                   <Box id="new_details">
-                    <Text fontWeight={'700'} color={'orange'} fontSize={'lg'}>{elem.info}</Text>
+                    <Text fontWeight={'700'} color={' #037dab'} fontSize={'lg'}>{elem.info}</Text>
                     <strong>{elem.headline}</strong>
                     <Text color={'gray'} >{elem.details}</Text>
                   </Box>
@@ -138,7 +138,7 @@ export const State = () => {
             })}
           </Box>
         </Box>
-        <Heading>Most <span style={{ color: "orange" }}>Visited Places</span> </Heading>
+        <Heading>Most <span style={{ color: " #037dab" }}>Visited Places</span> </Heading>
         <Box id="gallery_container">
           {loading ? (
             // Render skeletons for gallery while loading
@@ -153,7 +153,7 @@ export const State = () => {
                   <Box className="card-overlay">
                     <h3 className="card-title" style={{ fontWeight: "700" }}>{elem.StateName}</h3>
                     <p className="card-description">Explore the most visited  famous places</p>
-                    <Link to={'#'}> <Button colorScheme='orange' color={'white'} mt="10px" size="sm">Know more</Button></Link>
+                    <Link to={'#'}> <Button backgroundColor=' #037dab' color={'white'} mt="10px" size="sm">Know more</Button></Link>
                   </Box>
                 </Box>
               )

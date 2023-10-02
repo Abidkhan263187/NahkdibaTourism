@@ -73,7 +73,7 @@ export const Places = () => {
       {loading ? (
         <Skeleton height="40px" width="80%" my="10px" mx="auto" />
       ) : (
-        <Heading w={'95%'} m={'auto'} borderRadius={'5px'} backgroundColor={'orange'}>
+        <Heading w={'95%'} m={'auto'} borderRadius={'5px'} color={'white'} backgroundColor={'#037dab'}>
           {state}
         </Heading>
       )}
@@ -97,13 +97,13 @@ export const Places = () => {
                 <Box className="card_container">
                   <Box className="card-image" as="img" src={elem.images}></Box>
                   <Box className="card-overlay">
-                    <h3 className="card-title" style={{ fontWeight: '700', color: 'orange' }}>
+                    <h3 className="card-title" style={{ fontWeight: '700', color: ' #037dab' }}>
                       {elem.StateName}
                     </h3>
-                    <p className="card-description">Explore the famous places</p>
+                    <p className="card-description">Know more about this place</p>
                     <Link to={`#`}>
                       {' '}
-                      <Button colorScheme={'orange'} color={'white'} mt="10px" size="sm">
+                      <Button backgroundColor={'#037dab'} color={'white'} mt="10px" size="sm">
                         Know more
                       </Button>
                     </Link>
@@ -115,7 +115,7 @@ export const Places = () => {
                     {elem.placeName}
                   </Heading>
                   <Text color={'gray.600'}>{elem.desc}</Text>
-                  <Button size={'sm'} colorScheme="orange" variant="outline" mt={'20px'} as={Link} to={'#'}>
+                  <Button size={'sm'} backgroundColor=" #037dab" color="white" variant="outline" mt={'20px'} as={Link} to={'#'}>
                     Read more
                   </Button>
                 </Box>
@@ -151,7 +151,7 @@ export const Places = () => {
                   <Image margin="auto" w="100%" h="100%" src={elem.Image} alt="img" />
                   <Box p="6" textAlign="start">
                     <Box display="flex" alignItems="baseline">
-                      <Badge borderRadius="full" px="2" colorScheme="teal">
+                      <Badge borderRadius="full" px="2" backgroundColor="teal" color={'white'}>
                         New
                       </Badge>
                       <Box
@@ -186,7 +186,7 @@ export const Places = () => {
                         .map((_, i) => (
                           <StarIcon
                             key={i}
-                            color={i < elem.Rating ? 'orange.500' : 'gray.300'}
+                            color={i < elem.Rating ? ' #037dab' : 'gray.300'}
                           />
                         ))}
                       <Box as="span" ml="2" color="gray.500" fontSize="sm">
@@ -195,7 +195,8 @@ export const Places = () => {
                     </Box>
                     <Button
                       w="100%"
-                      colorScheme="orange"
+                      backgroundColor="#037dab"
+                      color={'white'}
                       size="sm"
                       mt="10px"
                       onClick={() => handleBook(elem)}

@@ -215,7 +215,7 @@
 
       &.face1 {
         position: relative;
-        background: rgb(241, 164, 21);
+        background: #037dab;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -556,7 +556,8 @@
 
 #book_container_right>a {
   width: 50%;
-  background-color: orange;
+  background-color: #037dab;
+  color: white;
 }
 
 #book_left {

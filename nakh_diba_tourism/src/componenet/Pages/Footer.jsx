@@ -47,20 +47,20 @@ export const Footer = () => {
                     <Heading size="md" mb={'10px'}>Follow Us</Heading>
                     <Box id="social_box">
                         <Flex id="social_media">
-                            <i style={{ color: "#0a66c2" }} class="fa-brands fa-linkedin fa-lg"></i>
-                            <Text as={Link} to="#">Linkedln</Text>
+                           <Box backgroundColor={'white'} w={'max-content'} height={'20px'}> <i style={{ color: "#0a66c2"}} className="fa-brands fa-linkedin fa-xl"></i></Box>
+                            <Link  to="https://www.linkedin.com/in/abid-khan-325795182/">Linkedln</Link>
                         </Flex>
                         <Flex id="social_media">
-                            <i style={{ color: "red" }} class="fa-brands fa-instagram fa-lg"></i>
-                            <Text as={Link} to="#" ml={'0px'}> Instagram</Text>
+                            <i style={{ color: "red" }} className="fa-brands fa-instagram fa-lg"></i>
+                            <Link to="https://www.instagram.com/_abidkhann/" ml={'0px'}> Instagram</Link>
                         </Flex>
                         <Flex id="social_media">
-                            <i style={{ color: "skyblue" }} class="fa-brands fa-twitter fa-lg"></i>
-                            <Text as={Link} to="#">Twitter</Text>
+                        <i className="fa-brands fa-x-twitter"></i>
+                            <Link to="https://twitter.com/khan_abid_">Twitter</Link>
                         </Flex>
                         <Flex id="social_media">
-                            <i style={{ color: "lightblue" }} class="fa-brands fa-facebook fa-lg"></i>
-                            <Text as={Link} to="#">Facebook</Text>
+                            <i style={{ color: "1178e7" }} className="fa-brands fa-facebook fa-lg"></i>
+                            <Link to="#">Facebook</Link>
                         </Flex>
                     </Box>
                 </Box>
@@ -68,9 +68,9 @@ export const Footer = () => {
             <Box id="footer_scnd" mb={'10px'}>
                 <Box>
                     <Heading size="md" mb={'10px'} >Contacts</Heading>
-                    <Text><i style={{ color: "darkyellow" }} class="fa-solid fa-envelope fa-lg"></i>&nbsp; abidkhan2631871@gmail.com</Text>
-                    <Text> <i style={{ color: "lightblue" }} class="fa-solid fa-phone fa-lg"></i>&nbsp; +91-62-8000-7521</Text>
-                    <Text> <i style={{ color: "green" }} class="fa-solid fa-clock fa-lg"></i>&nbsp; 24x7</Text>
+                    <Text><i style={{ color: "lightblue" }} className="fa-solid fa-envelope fa-lg"></i>&nbsp; abidkhan2631871@gmail.com</Text>
+                    <Text> <i style={{ color: "lightblue" }} className="fa-solid fa-phone fa-lg"></i>&nbsp; +91-62-8000-7521</Text>
+                    <Text> <i style={{ color: "green" }} className="fa-solid fa-clock fa-lg"></i>&nbsp; 24x7</Text>
                 </Box>
             </Box>
             <Box id="footer_thrd">

@@ -112,7 +112,8 @@ export const Country = () => {
           w={['', '', '100%', '95%']}
           m="auto"
           borderRadius="5px"
-          backgroundColor="orange"
+          backgroundColor="#037dab"
+          color={'white'}
         >
           {region}
         </Heading>
@@ -152,7 +153,8 @@ export const Country = () => {
           w="95%"
           m="auto"
           borderRadius="5px"
-          backgroundColor="orange"
+          backgroundColor=" #037dab"
+          color={'white'}
         >
           Gallery
         </Heading>
@@ -167,11 +169,11 @@ export const Country = () => {
                       {elem.StateName}
                     </h3>
                     <p className="card-description">
-                      "Explore the state's famous places
+                      Explore the state's famous places
                     </p>
                     <Link to={'#'}>
                       {' '}
-                      <Button bgColor={'#068181'} color={'white'} mt="10px" size="sm">
+                      <Button bgColor={'#037dab'} color={'white'} mt="10px" size="sm">
                         See places
                       </Button>
                     </Link>
