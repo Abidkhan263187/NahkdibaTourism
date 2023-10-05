@@ -2,7 +2,7 @@
 
 Welcome to Travelena, your gateway to discovering breathtaking landscapes, vibrant cultures, and unforgettable adventures through immersive travel experiences.
 
-[Visit Travelena](https://travelena.vercel.app/)
+[Visit Travelena](https://traveleena.vercel.app/)
 
 ## About 🚀
 
