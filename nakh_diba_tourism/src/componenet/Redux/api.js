@@ -3,7 +3,7 @@ import axios from "axios"
 export const SignupFunc=(SignUpData,gotoLogin)=>async(dispatch,)=>{
     // console.log(SignUpData)
     try {
-        await axios.post(`https://tired-cormorant.cyclic.app/touismReg/signup`,SignUpData,{
+        await axios.post(`process.env.REACT_APP_URL/touismReg/signup`,SignUpData,{
             headers:{
             'ContentType': 'application/json'
             }
@@ -22,7 +22,7 @@ export const SignupFunc=(SignUpData,gotoLogin)=>async(dispatch,)=>{
 
 export const LoginFunc=async(loginData,gotoHome)=>{
     try {
-        await axios.post(`https://tired-cormorant.cyclic.app/touismReg/login`,loginData,{
+        await axios.post(`${process.env.REACT_APP_URL}/touismReg/login`,loginData,{
             headers:{
             'ContentType': 'application/json'
             }
@@ -39,7 +39,7 @@ export const LoginFunc=async(loginData,gotoHome)=>{
 
 export const forgotPasword=async(email)=>{
 try {
-    await axios.post('http://localhost:5000/password/forgot',{
+    await axios.post(`$${process.env.REACT_APP_URL}/password/forgot`,{
         email:email
     },{
         headers:{
@@ -48,7 +48,7 @@ try {
     }).then(({data})=>{
        alert(data.message)
         localStorage.setItem('token',JSON.stringify(data.token))
-        console.log(data);
+        // console.log(data);
     })
 } catch (error) {
     alert("Invalid Email!")
@@ -59,7 +59,7 @@ try {
 export const updatePassword=async(gotoHome,token,password,confirmPassword)=>{
     // console.log("api point =====",password,confirmPassword,token);
     try {
-        const response = await axios.post('https://tired-cormorant.cyclic.app/password/reset', {
+        const response = await axios.post(`${process.env.REACT_APP_URL}/password/reset`, {
             password: password,
             confirmPassword: confirmPassword
         }, {

@@ -29,7 +29,7 @@ export const Places = () => {
     (async () => {
       try {
         const response = await axios.get(
-          `https://tired-cormorant.cyclic.app/tourism?Continent=${region}&CountryName=${country}&StateName=${state}`
+          `${process.env.REACT_APP_URL}/tourism?Continent=${region}&CountryName=${country}&StateName=${state}`
         );
         const stateGif = response.data.data[0].state[0][0].stateGif;
         console.log(stateGif);

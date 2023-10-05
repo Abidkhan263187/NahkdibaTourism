@@ -31,7 +31,7 @@ export const Country = () => {
     (async () => {
       try {
         await axios
-          .get(`https://tired-cormorant.cyclic.app/tourism?Continent=${region}`)
+          .get(`${process.env.REACT_APP_URL}/tourism?Continent=${region}`)
           .then(({ data }) => {
             let images = data.data[0].images;
             let gallery = data.data[0].gallery;

@@ -56,7 +56,7 @@ export const State = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios.get(`https://tired-cormorant.cyclic.app/tourism?Continent=${region}&CountryName=${country}`);
+        const response = await axios.get(`${process.env.REACT_APP_URL}/tourism?Continent=${region}&CountryName=${country}`);
         const states = response.data.data[0].countries[0].states;
         const countryGif = response.data.data[0].countries[0].countryGif;
         setGif(countryGif);
