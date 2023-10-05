@@ -48,19 +48,19 @@ export const Footer = () => {
                     <Box id="social_box">
                         <Flex id="social_media">
                            <Box backgroundColor={'white'} w={'max-content'} height={'20px'}> <i style={{ color: "#0a66c2"}} className="fa-brands fa-linkedin fa-xl"></i></Box>
-                            <Link  to="https://www.linkedin.com/in/abid-khan-325795182/">Linkedln</Link>
+                            <a  href="https://www.linkedin.com/in/abid-khan-325795182/">Linkedln</a>
                         </Flex>
                         <Flex id="social_media">
                             <i style={{ color: "red" }} className="fa-brands fa-instagram fa-lg"></i>
-                            <Link to="https://www.instagram.com/_abidkhann/" ml={'0px'}> Instagram</Link>
+                            <a href="https://www.instagram.com/_abidkhann/" ml={'0px'}> Instagram</a>
                         </Flex>
                         <Flex id="social_media">
                         <i className="fa-brands fa-x-twitter"></i>
-                            <Link to="https://twitter.com/khan_abid_">Twitter</Link>
+                            <a href="https://twitter.com/khan_abid_">Twitter</a>
                         </Flex>
                         <Flex id="social_media">
                             <i style={{ color: "1178e7" }} className="fa-brands fa-facebook fa-lg"></i>
-                            <Link to="#">Facebook</Link>
+                            <a href="#">Facebook</a>
                         </Flex>
                     </Box>
                 </Box>
