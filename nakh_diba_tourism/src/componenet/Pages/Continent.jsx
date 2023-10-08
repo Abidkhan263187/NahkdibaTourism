@@ -26,22 +26,22 @@ export const Continent = () => {
     {
       name: "Asia",
       imageSrc: "https://e1.pxfuel.com/desktop-wallpaper/619/216/desktop-wallpaper-tajmahal-taj-mahal-computer.jpg",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      description: "Asia offers a captivating blend of ancient traditions and modern marvels."
     },
     {
       name: "Australia",
       imageSrc: "https://c4.wallpaperflare.com/wallpaper/396/433/109/city-sydney-sydney-opera-house-photography-wallpaper-preview.jpg",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      description: " Australia is a vast and diverse country known for its unique wildlife."
     },
     {
       name: "Europe",
       imageSrc: "https://www.planetware.com/wpimages/2020/11/europe-top-attractions-colosseum-rome.jpg",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      description: "Europe is a continent renowned for its rich history, diverse cultures, and iconic landmarks."
     },
     {
       name: "Africa",
       imageSrc: "https://www.zicasso.com/static/1888a603dfc15fd3a7b886f7967f0826/304cc/1888a603dfc15fd3a7b886f7967f0826.jpg",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      description: " Africa is a continent of breathtaking landscapes, diverse cultures."
     }
   ];
 

@@ -39,7 +39,7 @@ export const LoginFunc=async(loginData,gotoHome)=>{
 
 export const forgotPasword=async(email)=>{
 try {
-    await axios.post(`$${process.env.REACT_APP_URL}/password/forgot`,{
+    await axios.post(`${process.env.REACT_APP_URL}/password/forgot`,{
         email:email
     },{
         headers:{
